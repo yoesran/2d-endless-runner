@@ -71,10 +71,10 @@ public class CharacterMoveController : MonoBehaviour
         }
 
         // game over
-        if (transform.position.y < fallPositionY)
+        /* if (transform.position.y < fallPositionY)
         {
             GameOver();
-        }
+        } */
     }
 
     private void FixedUpdate()

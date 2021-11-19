@@ -26,6 +26,7 @@ public class TerrainGeneratorController : MonoBehaviour
     // pool list
     private Dictionary<string, List<GameObject>> pool;
 
+
     private void Start()
     {
         // init pool
@@ -86,8 +87,8 @@ public class TerrainGeneratorController : MonoBehaviour
             newTerrain = GenerateFromPool(forceTerrain.gameObject, transform);
         }
 
-        newTerrain.transform.position = new Vector2(posX, 0f);
-
+        newTerrain.transform.position = new Vector2(posX, -1f);
+       
         spawnedTerrain.Add(newTerrain);
     }
 
@@ -111,6 +112,7 @@ public class TerrainGeneratorController : MonoBehaviour
             spawnedTerrain.Remove(terrainToRemove);
             ReturnToPool(terrainToRemove);
         }
+
     }
 
     // pool function
