@@ -7,6 +7,7 @@ public class CharacterMoveController : MonoBehaviour
     [Header("Movement")]
     public float moveAccel;
     public float maxSpeed;
+    public float velocity_y;
 
     [Header("Jump")]
     public float jumpAccel;
@@ -83,7 +84,7 @@ public class CharacterMoveController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundRaycastDistance, groundLayerMask);
         if (hit)
         {
-            if (!isOnGround && rig.velocity.y <= 0)
+            if (!isOnGround)
             {
                 isOnGround = true;
             }
@@ -101,7 +102,7 @@ public class CharacterMoveController : MonoBehaviour
             velocityVector.y += jumpAccel;
             isJumping = false;
         }
-
+        velocity_y = velocityVector.y;
         velocityVector.x = Mathf.Clamp(velocityVector.x + moveAccel * Time.deltaTime, 0.0f, maxSpeed);
 
         rig.velocity = velocityVector;
