@@ -1112,6 +1112,8 @@ MonoBehaviour:
   - {fileID: 114116631534652724, guid: e63afba43ae9d7242a388597d6de376d, type: 3}
   - {fileID: 114250358822042630, guid: bf95d53c5824be94b9728af212a5bd51, type: 3}
   - {fileID: 3571657268477115683, guid: df2eb91c3564c5849a50566184f07f39, type: 3}
+  - {fileID: 114116631534652724, guid: 839867d1c9b989f4387f1e285c95b965, type: 3}
+  - {fileID: 114116631534652724, guid: a987ee61d5f4c604badac08fa1697846, type: 3}
   terrainTemplateWidth: 20
   gameCamera: {fileID: 519420031}
   areaStartOffset: -10
@@ -1173,7 +1175,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 157.49
+  m_SurfaceArc: 170.3
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
