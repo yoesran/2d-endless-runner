@@ -68,7 +68,7 @@ public class PlatformGeneratorController : MonoBehaviour
 
         newTerrain = GenerateFromPool(terrainTemplates[Random.Range(0, terrainTemplates.Count)].gameObject, transform);
 
-        newTerrain.transform.position = new Vector2(posX, Random.Range(3.0f, 4.0f));
+        newTerrain.transform.position = new Vector2(posX,2.5f);
 
         spawnedTerrain.Add(newTerrain);
     }
