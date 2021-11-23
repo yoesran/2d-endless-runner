@@ -97,11 +97,13 @@ public class CharacterMoveController : MonoBehaviour
         // calculate velocity vector
         Vector2 velocityVector = rig.velocity;
 
+        //jumping
         if (isJumping)
         {
             velocityVector.y += jumpAccel;
             isJumping = false;
         }
+
         velocity_y = velocityVector.y;
         velocityVector.x = Mathf.Clamp(velocityVector.x + moveAccel * Time.deltaTime, 0.0f, maxSpeed);
 
