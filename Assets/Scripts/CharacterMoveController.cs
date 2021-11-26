@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterMoveController : MonoBehaviour
 {
+    public float Health = 100f;
+    public GameObject Object_Player;
+
     [Header("Movement")]
     public float moveAccel;
     public float maxSpeed;
@@ -41,7 +44,6 @@ public class CharacterMoveController : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sound = GetComponent<CharacterSoundController>();
-
         lastPositionX = transform.position.x;
     }
 
@@ -129,4 +131,18 @@ public class CharacterMoveController : MonoBehaviour
     {
         Debug.DrawLine(transform.position, transform.position + (Vector3.down * groundRaycastDistance), Color.white);
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        string tag = col.gameObject.tag;
+        if (tag == "Obstacle")
+        {
+            Health -= 10;
+        }
+        if (tag == "Enemy")
+        {
+            Health -= 20;
+        }
+    }
+
 }
