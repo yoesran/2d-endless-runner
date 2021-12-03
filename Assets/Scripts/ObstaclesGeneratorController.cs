@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObstaclesGeneratorController : MonoBehaviour
 {
+    float timer = 0f;
+
     [Header("Templates")]
     public List<GameObject> obstaclesTemplates;
     public float obstaclesWidth;
@@ -65,7 +67,7 @@ public class ObstaclesGeneratorController : MonoBehaviour
         
         newObstacles = GenerateFromPool(obstaclesTemplates[Random.Range(0, obstaclesTemplates.Count)], transform);
         
-        newObstacles.transform.position = new Vector2(posX, -5f);
+        newObstacles.transform.position = new Vector2(posX, -4f);
 
         spawnedObstacles.Add(newObstacles);
     }
@@ -143,4 +145,10 @@ public class ObstaclesGeneratorController : MonoBehaviour
         Debug.DrawLine(areaStartPosition + Vector3.up * debugLineHeight / 2, areaStartPosition + Vector3.down * debugLineHeight / 2, Color.red);
         Debug.DrawLine(areaEndPosition + Vector3.up * debugLineHeight / 2, areaEndPosition + Vector3.down * debugLineHeight / 2, Color.red);
     }
+
+
+
+
+
+
 }
