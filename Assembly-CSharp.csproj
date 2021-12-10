@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\PlatformGeneratorController.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
     <Compile Include="Assets\Scripts\ScoreData.cs" />
+    <Compile Include="Assets\Scripts\SkillBtn.cs" />
     <Compile Include="Assets\Scripts\TerrainGeneratorController.cs" />
     <Compile Include="Assets\Scripts\TerrainTemplateController.cs" />
     <Compile Include="Assets\Scripts\UIGameOverController.cs" />

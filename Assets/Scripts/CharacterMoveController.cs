@@ -34,8 +34,10 @@ public class CharacterMoveController : MonoBehaviour
     private Animator anim;
     private CharacterSoundController sound;
 
-    private bool isJumping;
-    private bool isOnGround;
+    private bool isJumping = false;
+    private bool canDoubleJump = false;
+    public bool isOnGround;
+    public bool BasicAttack;
 
     private float lastPositionX;
 
@@ -50,18 +52,23 @@ public class CharacterMoveController : MonoBehaviour
     private void Update()
     {
         // read input
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
         {
-            if (isOnGround)
-            {
-                isJumping = true;
+            rig.velocity = new Vector2(rig.velocity.x, jumpAccel);
+            isJumping = true;
+            canDoubleJump = true;
+            sound.PlayJump();
 
-                sound.PlayJump();
-            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && isJumping == true && canDoubleJump == true)
+        {
+            rig.velocity = new Vector2(rig.velocity.x, jumpAccel);
+            canDoubleJump = false;
         }
 
         // change animation
-        anim.SetBool("isOnGround", isOnGround);
+        anim.SetBool("Jumping", isJumping);
+        anim.SetBool("BasicAttack", BasicAttack);
 
         // calculate score
         int distancePassed = Mathf.FloorToInt(transform.position.x - lastPositionX);
@@ -74,19 +81,20 @@ public class CharacterMoveController : MonoBehaviour
         }
 
         // game over
-        /* if (transform.position.y < fallPositionY)
+        if (Health==0f)
         {
             GameOver();
-        } */
+            Destroy(this.gameObject);
+        }
     }
 
     private void FixedUpdate()
     {
         // raycast ground
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundRaycastDistance, groundLayerMask);
+   /*     RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundRaycastDistance, groundLayerMask);
         if (hit)
         {
-            if (!isOnGround && rig.velocity.y <= 3)
+            if (!isOnGround && rig.velocity.y <= 0)
             {
                 isOnGround = true;
             }
@@ -95,16 +103,9 @@ public class CharacterMoveController : MonoBehaviour
         {
             isOnGround = false;
         }
-
+*/
         // calculate velocity vector
         Vector2 velocityVector = rig.velocity;
-
-        //jumping
-        if (isJumping)
-        {
-            velocityVector.y += jumpAccel;
-            isJumping = false;
-        }
 
         velocity_y = velocityVector.y;
         velocityVector.x = Mathf.Clamp(velocityVector.x + moveAccel * Time.deltaTime, 0.0f, maxSpeed);
@@ -115,7 +116,7 @@ public class CharacterMoveController : MonoBehaviour
     private void GameOver()
     {
         // set high score
-        score.FinishScoring();
+  //      score.FinishScoring();
 
         // stop camera movement
         gameCamera.enabled = false;
@@ -143,6 +144,18 @@ public class CharacterMoveController : MonoBehaviour
         {
             Health -= 20;
         }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
+            isJumping = false;
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        isOnGround = false;    
     }
 
 }
