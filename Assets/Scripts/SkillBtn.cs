@@ -8,6 +8,7 @@ public class SkillBtn : MonoBehaviour
     public string SkillName;
     float cooldown;
     public float CoolTime;
+    public float BasicAttackTime=1f;
     public Image CdImg;
     bool cool;
     CharacterMoveController Player;
@@ -23,8 +24,9 @@ public class SkillBtn : MonoBehaviour
         if (!cool)
         {
             cool = true;
-          //  Player.BasicAttack = true;
+            Player.BasicAttack = true;
             StartCoroutine("CoolDown");
+            StartCoroutine("BasicAttack");
         }
     }
     IEnumerator CoolDown()
@@ -38,6 +40,20 @@ public class SkillBtn : MonoBehaviour
             {
                 cool = false;
                 StopCoroutine("CoolDown");
+            }
+            yield return null;
+        }
+    }
+    IEnumerator BasicAttack()
+    {
+        cooldown = 0;
+        while (true)
+        {
+            cooldown += Time.deltaTime;
+            if (cooldown > BasicAttackTime)
+            {
+                Player.BasicAttack = false;
+                StopCoroutine("BasicAttack");
             }
             yield return null;
         }

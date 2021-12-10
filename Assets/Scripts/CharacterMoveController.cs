@@ -5,7 +5,10 @@ using UnityEngine;
 public class CharacterMoveController : MonoBehaviour
 {
     public float Health = 100f;
+    float BlinkCooldown;
+    float BlinkTime = 0.5f;
     public GameObject Object_Player;
+    
 
     [Header("Movement")]
     public float moveAccel;
@@ -33,6 +36,8 @@ public class CharacterMoveController : MonoBehaviour
     private Rigidbody2D rig;
     private Animator anim;
     private CharacterSoundController sound;
+    public Color color = Color.red;
+    
 
     private bool isJumping = false;
     private bool canDoubleJump = false;
@@ -62,7 +67,7 @@ public class CharacterMoveController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) && isJumping == true && canDoubleJump == true)
         {
-            rig.velocity = new Vector2(rig.velocity.x, jumpAccel);
+            rig.velocity = new Vector2(rig.velocity.x, jumpAccel-5);
             canDoubleJump = false;
         }
 
@@ -139,12 +144,23 @@ public class CharacterMoveController : MonoBehaviour
         if (tag == "Obstacle")
         {
             Health -= 10;
+     /*      color.a = 0.1f;
+            GetComponent<Renderer>().material.color = color;
+            StartCoroutine("CoolDown");
+
+    */
         }
         if (tag == "Enemy")
         {
+            Destroy(col.gameObject);
             Health -= 20;
+    /*      color.a = 0.1f;
+            GetComponent<Renderer>().material.color = color;
+            StartCoroutine("CoolDown");
+       */
         }
     }
+  
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -158,4 +174,23 @@ public class CharacterMoveController : MonoBehaviour
         isOnGround = false;    
     }
 
+
+    /*
+    IEnumerator CoolDown()
+    {
+        BlinkCooldown = 0;
+        while (true)
+        {
+            BlinkCooldown += Time.deltaTime;
+            if (BlinkCooldown > BlinkTime)
+            {
+                color.a = 1f;
+                GetComponent<Renderer>().material.color = color;
+                StopCoroutine("CoolDown");
+            }
+            yield return null;
+        }
+    }
+
+    */
 }

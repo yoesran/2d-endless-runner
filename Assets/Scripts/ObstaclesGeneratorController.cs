@@ -67,7 +67,7 @@ public class ObstaclesGeneratorController : MonoBehaviour
         
         newObstacles = GenerateFromPool(obstaclesTemplates[Random.Range(0, obstaclesTemplates.Count)], transform);
         
-        newObstacles.transform.position = new Vector2(posX, -4f);
+        newObstacles.transform.position = new Vector2(posX, -3f);
 
         spawnedObstacles.Add(newObstacles);
     }
