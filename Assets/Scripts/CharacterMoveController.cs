@@ -42,7 +42,8 @@ public class CharacterMoveController : MonoBehaviour
     private bool isJumping = false;
     private bool canDoubleJump = false;
     public bool isOnGround;
-    public bool BasicAttack;
+    public bool BasicAttack = false;
+    public bool DoubleJump;
 
     private float lastPositionX;
 
@@ -69,11 +70,18 @@ public class CharacterMoveController : MonoBehaviour
         {
             rig.velocity = new Vector2(rig.velocity.x, jumpAccel-5);
             canDoubleJump = false;
+            DoubleJump = true;
         }
 
         // change animation
+        if (BasicAttack == true)
+        {
+            playBasicAttackAnimation();
+            BasicAttack = false;
+        }
         anim.SetBool("Jumping", isJumping);
         anim.SetBool("BasicAttack", BasicAttack);
+        anim.SetBool("DoubleJump", DoubleJump);
 
         // calculate score
         int distancePassed = Mathf.FloorToInt(transform.position.x - lastPositionX);
@@ -92,7 +100,10 @@ public class CharacterMoveController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
+    public void playBasicAttackAnimation()
+    {
+        anim.Play("BasicAttack");
+    }
     private void FixedUpdate()
     {
         // raycast ground
@@ -167,6 +178,7 @@ public class CharacterMoveController : MonoBehaviour
         {
             isOnGround = true;
             isJumping = false;
+            DoubleJump = false;
         }
     }
     void OnCollisionExit2D(Collision2D collision)

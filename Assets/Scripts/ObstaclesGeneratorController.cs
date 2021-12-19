@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ObstaclesGeneratorController : MonoBehaviour
 {
-    float timer = 0f;
 
     [Header("Templates")]
     public List<GameObject> obstaclesTemplates;
