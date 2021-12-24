@@ -47,6 +47,10 @@ public class EnemyFollowPlayer : MonoBehaviour
         
 
     }
+    public void TakeDamage(int damage)
+    {
+        Destroy(this);
+    }
 
 
     private void OnDrawGizmosSelected()

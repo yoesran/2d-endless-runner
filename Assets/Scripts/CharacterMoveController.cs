@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class CharacterMoveController : MonoBehaviour
 {
+    public Transform AttackPosition;
+    public float AttackRangeX;
+    public float AttackRangeY;
+    public LayerMask WhatIsEnemies;
+    public int damage;
+
     public float Health = 100f;
     public float Coins = 0f;
     float BlinkCooldown;
@@ -102,6 +108,16 @@ public class CharacterMoveController : MonoBehaviour
             DoubleJump = true;
         }
     }
+    public void BasicAttackButton()
+    {
+        Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(AttackPosition.position, new Vector2(AttackRangeX, AttackRangeY),0, WhatIsEnemies);
+        for (int i = 0; i < enemiesToDamage.Length; i++)
+        {
+            enemiesToDamage[i].GetComponent<EnemyFollowPlayer>().TakeDamage(damage);
+            Coins += 5;
+        }
+    }
+
     public void playBasicAttackAnimation()
     {
         anim.Play("BasicAttack");
@@ -179,7 +195,7 @@ public class CharacterMoveController : MonoBehaviour
         if (tag == "Coin")
         {
             Destroy(col.gameObject);
-            Coins += 5;
+            Coins += 1;
             /*      color.a = 0.1f;
                     GetComponent<Renderer>().material.color = color;
                     StartCoroutine("CoolDown");
@@ -198,6 +214,13 @@ public class CharacterMoveController : MonoBehaviour
     void OnCollisionExit2D(Collision2D collision)
     {
         isOnGround = false;    
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(AttackPosition.position, new Vector3(AttackRangeX, AttackRangeY, 1));
     }
 
 
