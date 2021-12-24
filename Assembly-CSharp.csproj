@@ -63,6 +63,8 @@
     <Compile Include="Assets\Scripts\CameraMoveController.cs" />
     <Compile Include="Assets\Scripts\CharacterMoveController.cs" />
     <Compile Include="Assets\Scripts\CharacterSoundController.cs" />
+    <Compile Include="Assets\Scripts\CoinsController.cs" />
+    <Compile Include="Assets\Scripts\CoinsData.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyFollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Health_Bar.cs" />
     <Compile Include="Assets\Scripts\LoopGeneratorController.cs" />

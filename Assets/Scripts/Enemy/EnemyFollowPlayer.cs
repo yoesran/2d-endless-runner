@@ -25,9 +25,10 @@ public class EnemyFollowPlayer : MonoBehaviour
         RaycastHit2D groundCheck = Physics2D.Raycast(groundDetect.position, Vector2.down, rayDist);
 
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+    
         if (distanceFromPlayer < lineOfSite)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(player.position.x, this.transform.position.y), speed * Time.deltaTime);
         }
         else if (groundCheck.collider==false)
         {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterMoveController : MonoBehaviour
 {
     public float Health = 100f;
+    public float Coins = 0f;
     float BlinkCooldown;
     float BlinkTime = 0.5f;
     public GameObject Object_Player;
@@ -170,8 +171,16 @@ public class CharacterMoveController : MonoBehaviour
             StartCoroutine("CoolDown");
        */
         }
+        if (tag == "Coin")
+        {
+            Destroy(col.gameObject);
+            Coins += 5;
+            /*      color.a = 0.1f;
+                    GetComponent<Renderer>().material.color = color;
+                    StartCoroutine("CoolDown");
+               */
+        }
     }
-  
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
