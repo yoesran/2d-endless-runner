@@ -58,22 +58,6 @@ public class CharacterMoveController : MonoBehaviour
 
     private void Update()
     {
-        // read input
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
-        {
-            rig.velocity = new Vector2(rig.velocity.x, jumpAccel);
-            isJumping = true;
-            canDoubleJump = true;
-            sound.PlayJump();
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Space) && isJumping == true && canDoubleJump == true)
-        {
-            rig.velocity = new Vector2(rig.velocity.x, jumpAccel-5);
-            canDoubleJump = false;
-            DoubleJump = true;
-        }
-
         // change animation
         if (BasicAttack == true)
         {
@@ -101,7 +85,28 @@ public class CharacterMoveController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    public void JumpButton()
+    {
+        if (isOnGround == true)
+        {
+            rig.velocity = new Vector2(rig.velocity.x, jumpAccel);
+            isJumping = true;
+            canDoubleJump = true;
+            sound.PlayJump();
+
+        }
+        else if (isJumping == true && canDoubleJump == true)
+        {
+            rig.velocity = new Vector2(rig.velocity.x, jumpAccel - 5);
+            canDoubleJump = false;
+            DoubleJump = true;
+        }
+    }
     public void playBasicAttackAnimation()
+    {
+        anim.Play("BasicAttack");
+    }
+    public void ButtonJump()
     {
         anim.Play("BasicAttack");
     }
