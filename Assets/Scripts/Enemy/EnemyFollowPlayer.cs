@@ -16,6 +16,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     {
         StartPosition = this.transform.position;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        transform.eulerAngles = new Vector3(0, -180, 0);
     }
 
     // Update is called once per frame

@@ -85,7 +85,7 @@ public class CharacterMoveController : MonoBehaviour
         }
 
         // game over
-        if (Health==0f)
+        if (Health<=0f)
         {
             GameOver();
             Destroy(this.gameObject);
@@ -103,7 +103,7 @@ public class CharacterMoveController : MonoBehaviour
         }
         else if (isJumping == true && canDoubleJump == true)
         {
-            rig.velocity = new Vector2(rig.velocity.x, jumpAccel - 5);
+            rig.velocity = new Vector2(rig.velocity.x, jumpAccel - 7);
             canDoubleJump = false;
             DoubleJump = true;
         }
@@ -191,6 +191,15 @@ public class CharacterMoveController : MonoBehaviour
             GetComponent<Renderer>().material.color = color;
             StartCoroutine("CoolDown");
        */
+        }
+        if (tag == "Enemy Fly")
+        {
+            Destroy(col.gameObject);
+            Health -= 20;
+            /*      color.a = 0.1f;
+                    GetComponent<Renderer>().material.color = color;
+                    StartCoroutine("CoolDown");
+               */
         }
         if (tag == "Coin")
         {

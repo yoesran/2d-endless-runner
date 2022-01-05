@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d738330b65b2e454788d7913f72400df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   lineOfSite: 1.5
   rayDist: 1.5
   groundDetect: {fileID: 7933369583778098793}

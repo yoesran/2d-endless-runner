@@ -42,11 +42,11 @@ GameObject:
   - component: {fileID: 1919730890770545116}
   - component: {fileID: 1919730890770545117}
   - component: {fileID: 1919730890770545114}
-  - component: {fileID: 1919730890770545115}
+  - component: {fileID: 9191462823655517147}
   - component: {fileID: 1919730890770545118}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Enemy
+  m_Name: EnemyFly
+  m_TagString: Enemy Fly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1919730890770545115
+--- !u!114 &9191462823655517147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,13 +168,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1919730890770545112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d738330b65b2e454788d7913f72400df, type: 3}
+  m_Script: {fileID: 11500000, guid: ddb7934a43453a74681e0df9fe14671b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  lineOfSite: 3
-  rayDist: 3
-  groundDetect: {fileID: 1919730890101478290}
+  moveAccel: 3
+  maxSpeed: 3
 --- !u!50 &1919730890770545118
 Rigidbody2D:
   serializedVersion: 4

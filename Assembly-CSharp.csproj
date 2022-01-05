@@ -66,6 +66,9 @@
     <Compile Include="Assets\Scripts\CharacterSoundController.cs" />
     <Compile Include="Assets\Scripts\CoinsController.cs" />
     <Compile Include="Assets\Scripts\CoinsData.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyDaratTanpaBolakBalik.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyFlyBehavior.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyFlySpawn.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyFollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Health_Bar.cs" />
     <Compile Include="Assets\Scripts\LoopGeneratorController.cs" />
