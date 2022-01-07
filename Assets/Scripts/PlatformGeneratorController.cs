@@ -30,7 +30,7 @@ public class PlatformGeneratorController : MonoBehaviour
 
         spawnedTerrain = new List<GameObject>();
 
-        lastGeneratedPositionX = GetHorizontalPositionStart();
+        lastGeneratedPositionX = GetHorizontalPositionStart()+15f;
         lastRemovedPositionX = lastGeneratedPositionX - terrainTemplateWidth;
     }
 
@@ -141,7 +141,8 @@ public class PlatformGeneratorController : MonoBehaviour
         areaStartPosition.x = GetHorizontalPositionStart();
         areaEndPosition.x = GetHorizontalPositionEnd();
 
-        Debug.DrawLine(areaStartPosition + Vector3.up * debugLineHeight / 2, areaStartPosition + Vector3.down * debugLineHeight / 2, Color.red);
-        Debug.DrawLine(areaEndPosition + Vector3.up * debugLineHeight / 2, areaEndPosition + Vector3.down * debugLineHeight / 2, Color.red);
+        Debug.DrawLine(areaStartPosition + Vector3.up * debugLineHeight / 2, areaStartPosition + Vector3.down * debugLineHeight / 2, Color.magenta);
+        Debug.DrawLine(areaEndPosition + Vector3.up * debugLineHeight / 2, areaEndPosition + Vector3.down * debugLineHeight / 2, Color.magenta);
     }
+
 }

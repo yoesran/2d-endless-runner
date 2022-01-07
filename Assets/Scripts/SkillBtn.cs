@@ -28,6 +28,16 @@ public class SkillBtn : MonoBehaviour
             //     StartCoroutine("BasicAttack");
         }
     }
+    public void Shoot()
+    {
+        if (!cool)
+        {
+            cool = true;
+            Player.Fire();
+            StartCoroutine("CoolDown");
+            //     StartCoroutine("BasicAttack");
+        }
+    }
     IEnumerator CoolDown()
     {
         cooldown = 0;

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class CharacterMoveController : MonoBehaviour
 {
+    [Header("Skill")]
+    public Rigidbody2D bulletPrefab;
+    public float bulletPos;
+    public float bulletSpeed;
+    public GameObject shootPos;
+
+    [Header("Basic Attack")]
     public Transform AttackPosition;
     public float AttackRangeX;
     public float AttackRangeY;
@@ -46,11 +53,11 @@ public class CharacterMoveController : MonoBehaviour
     public Color color = Color.red;
     
 
-    private bool isJumping = false;
-    private bool canDoubleJump = false;
-    public bool isOnGround;
+    public static bool isJumping = false;
+    public bool canDoubleJump = false;
+    public static bool isOnGround;
     public bool BasicAttack = false;
-    public bool DoubleJump;
+    public static bool DoubleJump;
 
     private float lastPositionX;
 
@@ -68,7 +75,14 @@ public class CharacterMoveController : MonoBehaviour
         if (BasicAttack == true)
         {
             playBasicAttackAnimation();
+            Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(AttackPosition.position, new Vector2(AttackRangeX, AttackRangeY), 0, WhatIsEnemies);
+            for (int i = 0; i < enemiesToDamage.Length; i++)
+            {
+                enemiesToDamage[i].GetComponent<EnemyFollowPlayer>().TakeDamage(damage);
+                Coins += 5;
+            }
             BasicAttack = false;
+            
         }
         anim.SetBool("Jumping", isJumping);
         anim.SetBool("BasicAttack", BasicAttack);
@@ -106,16 +120,13 @@ public class CharacterMoveController : MonoBehaviour
             rig.velocity = new Vector2(rig.velocity.x, jumpAccel - 7);
             canDoubleJump = false;
             DoubleJump = true;
+            sound.PlayJump();
+            
         }
     }
     public void BasicAttackButton()
     {
-        Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(AttackPosition.position, new Vector2(AttackRangeX, AttackRangeY),0, WhatIsEnemies);
-        for (int i = 0; i < enemiesToDamage.Length; i++)
-        {
-            enemiesToDamage[i].GetComponent<EnemyFollowPlayer>().TakeDamage(damage);
-            Coins += 5;
-        }
+        
     }
 
     public void playBasicAttackAnimation()
@@ -195,7 +206,7 @@ public class CharacterMoveController : MonoBehaviour
         if (tag == "Enemy Fly")
         {
             Destroy(col.gameObject);
-            Health -= 20;
+            Health -= 30;
             /*      color.a = 0.1f;
                     GetComponent<Renderer>().material.color = color;
                     StartCoroutine("CoolDown");
@@ -205,15 +216,17 @@ public class CharacterMoveController : MonoBehaviour
         {
             Destroy(col.gameObject);
             Coins += 1;
+            sound.PlayCoin();
             /*      color.a = 0.1f;
                     GetComponent<Renderer>().material.color = color;
                     StartCoroutine("CoolDown");
                */
         }
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && rig.velocity.y <= 0)
         {
             isOnGround = true;
             isJumping = false;
@@ -232,23 +245,11 @@ public class CharacterMoveController : MonoBehaviour
         Gizmos.DrawWireCube(AttackPosition.position, new Vector3(AttackRangeX, AttackRangeY, 1));
     }
 
-
-    /*
-    IEnumerator CoolDown()
+    public void Fire()
     {
-        BlinkCooldown = 0;
-        while (true)
-        {
-            BlinkCooldown += Time.deltaTime;
-            if (BlinkCooldown > BlinkTime)
-            {
-                color.a = 1f;
-                GetComponent<Renderer>().material.color = color;
-                StopCoroutine("CoolDown");
-            }
-            yield return null;
-        }
+        //memunculkan peluru pada posisi gameobject shootpos
+        Rigidbody2D bPrefab = Instantiate(bulletPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
+        //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
+        bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
     }
-
-    */
 }
