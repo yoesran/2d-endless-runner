@@ -62,7 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Button\JumpButton.cs" />
     <Compile Include="Assets\Scripts\CameraMoveController.cs" />
+    <Compile Include="Assets\Scripts\Character\BasicAttack.cs" />
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Character\Spark.cs" />
     <Compile Include="Assets\Scripts\CharacterMoveController.cs" />
     <Compile Include="Assets\Scripts\CharacterSoundController.cs" />
     <Compile Include="Assets\Scripts\CoinsController.cs" />

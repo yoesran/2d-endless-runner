@@ -18,14 +18,13 @@ public class SkillBtn : MonoBehaviour
         Player = FindObjectOfType<CharacterMoveController>();
     }
 
-    public void OnClickBtn()
+    public void BasicAttack()
     {
         if (!cool)
         {
             cool = true;
-            Player.BasicAttack = true;
+            Player.Basic();
             StartCoroutine("CoolDown");
-            //     StartCoroutine("BasicAttack");
         }
     }
     public void Shoot()
@@ -35,7 +34,15 @@ public class SkillBtn : MonoBehaviour
             cool = true;
             Player.Fire();
             StartCoroutine("CoolDown");
-            //     StartCoroutine("BasicAttack");
+        }
+    }
+    public void Spark()
+    {
+        if (!cool)
+        {
+            cool = true;
+            Player.Spark();
+            StartCoroutine("CoolDown");
         }
     }
     IEnumerator CoolDown()
@@ -49,20 +56,6 @@ public class SkillBtn : MonoBehaviour
             {
                 cool = false;
                 StopCoroutine("CoolDown");
-            }
-            yield return null;
-        }
-    }
-    IEnumerator BasicAttack()
-    {
-        cooldown = 0;
-        while (true)
-        {
-            cooldown += Time.deltaTime;
-            if (cooldown > BasicAttackTime)
-            {
-                Player.BasicAttack = false;
-                StopCoroutine("BasicAttack");
             }
             yield return null;
         }

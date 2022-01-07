@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 206762444}
   - component: {fileID: 206762443}
   m_Layer: 5
-  m_Name: BasicAttack_Bg
+  m_Name: Spark_Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,12 +380,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89630f223d2ba4549bb4af81f1b76d9d, type: 3}
+  m_Sprite: {fileID: 21300040, guid: c38ca871390f017449c21020a08aca3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -615,6 +615,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321301394}
   m_CullTransparentMesh: 0
+--- !u!1 &322647975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 322647976}
+  m_Layer: 0
+  m_Name: BasicPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &322647976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322647975}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.69, y: -0.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2066852490}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &346580322
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +804,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 364668432}
-        m_MethodName: OnClickBtn
+        m_MethodName: BasicAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -897,7 +927,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484567336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: -0.05, z: 0}
+  m_LocalPosition: {x: 1.77, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2066852490}
@@ -1596,6 +1626,13 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 41d702e8492d53143bf4fb661cab93e0, type: 3}
   scoreHighlight: {fileID: 8300000, guid: da685c24c533dfa4792c1447864a1c27, type: 3}
   coin: {fileID: 0}
+  shoot: {fileID: 0}
+  spark: {fileID: 0}
+  basic: {fileID: 0}
+  EnemyFlyDestroy: {fileID: 0}
+  EnemyGroundDestroy: {fileID: 0}
+  PlayerDestroy: {fileID: 0}
+  StartSound: {fileID: 0}
 --- !u!4 &1019926298
 Transform:
   m_ObjectHideFlags: 0
@@ -1919,7 +1956,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1222738175}
-        m_MethodName: OnClickBtn
+        m_MethodName: BasicAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2369,7 +2406,7 @@ GameObject:
   - component: {fileID: 1530037317}
   - component: {fileID: 1530037316}
   m_Layer: 5
-  m_Name: Slot (3)
+  m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2582,7 +2619,7 @@ GameObject:
   - component: {fileID: 1546960066}
   - component: {fileID: 1546960065}
   m_Layer: 5
-  m_Name: BasicAttack
+  m_Name: Spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2620,7 +2657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
-  CoolTime: 1
+  CoolTime: 5
   BasicAttackTime: 3
   CdImg: {fileID: 1546960067}
 --- !u!114 &1546960066
@@ -2664,7 +2701,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1546960065}
-        m_MethodName: OnClickBtn
+        m_MethodName: Spark
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2692,7 +2729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89630f223d2ba4549bb4af81f1b76d9d, type: 3}
+  m_Sprite: {fileID: 21300006, guid: ec03130cf1a481a42868b62de164589d, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3345,7 +3382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
-  CoolTime: 3
+  CoolTime: 2
   BasicAttackTime: 3
   CdImg: {fileID: 1948260311}
 --- !u!114 &1948260310
@@ -3636,6 +3673,7 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 484567337}
+  - {fileID: 322647976}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3672,16 +3710,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1506203861762682123, guid: e97bd81249891ff4fa37aa286d61d2e0,
     type: 3}
+  slash: {fileID: 6286649002896273872, guid: 0750c1baff22e764087a3980b4a9a5af, type: 3}
+  sparkPrefab: {fileID: 3676223210531095387, guid: 30b27cd63233e4e4885baff99241c976,
+    type: 3}
   bulletPos: 1
   bulletSpeed: 500
   shootPos: {fileID: 484567336}
-  AttackPosition: {fileID: 484567337}
-  AttackRangeX: 10.88
-  AttackRangeY: 6
-  WhatIsEnemies:
-    serializedVersion: 2
-    m_Bits: 1024
-  damage: 10
+  basicpos: {fileID: 322647975}
   Health: 100
   Coins: 0
   Object_Player: {fileID: 0}
@@ -3700,7 +3735,6 @@ MonoBehaviour:
   gameCamera: {fileID: 519420030}
   color: {r: 1, g: 0, b: 0, a: 1}
   canDoubleJump: 0
-  BasicAttack: 0
 --- !u!114 &2066852493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3713,9 +3747,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a320cc474068c42a78b4d96276c91a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: {fileID: 8300000, guid: 74fa4e88cc605f4468f98a256b764c56, type: 3}
+  jump: {fileID: 8300000, guid: e431efc6db2555842acdd542a7a28027, type: 3}
   scoreHighlight: {fileID: 8300000, guid: da685c24c533dfa4792c1447864a1c27, type: 3}
   coin: {fileID: 8300000, guid: 755a0406e903ff0438921fed23505dc8, type: 3}
+  shoot: {fileID: 8300000, guid: 88d9cfddbdcb6d245b180854d5934398, type: 3}
+  spark: {fileID: 8300000, guid: 1345be6e04bc5224fafa3865782a2eb9, type: 3}
+  basic: {fileID: 8300000, guid: 773d025ac3c4be9488295bd66393bbdd, type: 3}
+  EnemyFlyDestroy: {fileID: 8300000, guid: f2917d4266723e6449c139e92fc62a50, type: 3}
+  EnemyGroundDestroy: {fileID: 8300000, guid: 43b86ef12dc28ca458ec93c8bc0fc01b, type: 3}
+  PlayerDestroy: {fileID: 8300000, guid: f542dd446aa8c8d449a3f7817be97324, type: 3}
+  StartSound: {fileID: 8300000, guid: 1614ada9f7d46e54f9e22f1f5d754798, type: 3}
 --- !u!82 &2066852494
 AudioSource:
   m_ObjectHideFlags: 0

@@ -13,11 +13,18 @@ public class Bullet : MonoBehaviour
     {
         Player = FindObjectOfType<CharacterMoveController>();
     }
-    private void OnCollisionEnter2D(Collision2D target)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (target.gameObject.tag == "Enemy" || target.gameObject.tag == "Enemy Fly")
+        string tag = col.gameObject.tag;
+        if (tag == "Enemy")
         {
-            Destroy(target.gameObject);
+            Destroy(col.gameObject);
+            Player.Coins += 5;
+        }
+        else if (tag == "Enemy Fly")
+        {
+            Destroy(col.gameObject);
+            Player.Coins += 10;
         }
         Destroy(gameObject);
     }

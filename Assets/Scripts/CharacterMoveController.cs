@@ -6,16 +6,13 @@ public class CharacterMoveController : MonoBehaviour
 {
     [Header("Skill")]
     public Rigidbody2D bulletPrefab;
+    public Rigidbody2D slash;
+    int e = 1;
+    public Rigidbody2D sparkPrefab;
     public float bulletPos;
     public float bulletSpeed;
     public GameObject shootPos;
-
-    [Header("Basic Attack")]
-    public Transform AttackPosition;
-    public float AttackRangeX;
-    public float AttackRangeY;
-    public LayerMask WhatIsEnemies;
-    public int damage;
+    public GameObject basicpos;
 
     public float Health = 100f;
     public float Coins = 0f;
@@ -56,7 +53,6 @@ public class CharacterMoveController : MonoBehaviour
     public static bool isJumping = false;
     public bool canDoubleJump = false;
     public static bool isOnGround;
-    public bool BasicAttack = false;
     public static bool DoubleJump;
 
     private float lastPositionX;
@@ -67,25 +63,32 @@ public class CharacterMoveController : MonoBehaviour
         anim = GetComponent<Animator>();
         sound = GetComponent<CharacterSoundController>();
         lastPositionX = transform.position.x;
+        
     }
 
     private void Update()
     {
         // change animation
-        if (BasicAttack == true)
+        //if (BasicAttack == true)
+        //{
+        //    playBasicAttackAnimation();
+        //    Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(AttackPosition.position, new Vector2(AttackRangeX, AttackRangeY), 0, WhatIsEnemies);
+        //    for (int i = 0; i < enemiesToDamage.Length; i++)
+        //    {
+        //        enemiesToDamage[i].GetComponent<EnemyFollowPlayer>().TakeDamage(damage);
+        //        Coins += 5;
+        //    }
+        //    BasicAttack = false;
+
+        //}
+        if (e == 1)
         {
-            playBasicAttackAnimation();
-            Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(AttackPosition.position, new Vector2(AttackRangeX, AttackRangeY), 0, WhatIsEnemies);
-            for (int i = 0; i < enemiesToDamage.Length; i++)
-            {
-                enemiesToDamage[i].GetComponent<EnemyFollowPlayer>().TakeDamage(damage);
-                Coins += 5;
-            }
-            BasicAttack = false;
-            
-        }
+            sound.PlayStartSound();
+            e += 1;
+        }    
+
+
         anim.SetBool("Jumping", isJumping);
-        anim.SetBool("BasicAttack", BasicAttack);
         anim.SetBool("DoubleJump", DoubleJump);
 
         // calculate score
@@ -101,8 +104,10 @@ public class CharacterMoveController : MonoBehaviour
         // game over
         if (Health<=0f)
         {
+            sound.PlayPlayerDestroy();
             GameOver();
             Destroy(this.gameObject);
+
         }
     }
     public void JumpButton()
@@ -124,19 +129,7 @@ public class CharacterMoveController : MonoBehaviour
             
         }
     }
-    public void BasicAttackButton()
-    {
-        
-    }
 
-    public void playBasicAttackAnimation()
-    {
-        anim.Play("BasicAttack");
-    }
-    public void ButtonJump()
-    {
-        anim.Play("BasicAttack");
-    }
     private void FixedUpdate()
     {
         // raycast ground
@@ -196,6 +189,7 @@ public class CharacterMoveController : MonoBehaviour
         }
         if (tag == "Enemy")
         {
+            sound.PlayEnemyGroundDestroy();
             Destroy(col.gameObject);
             Health -= 20;
     /*      color.a = 0.1f;
@@ -205,6 +199,7 @@ public class CharacterMoveController : MonoBehaviour
         }
         if (tag == "Enemy Fly")
         {
+            sound.PlayEnemyFlyDestroy();
             Destroy(col.gameObject);
             Health -= 30;
             /*      color.a = 0.1f;
@@ -238,17 +233,31 @@ public class CharacterMoveController : MonoBehaviour
         isOnGround = false;    
     }
 
-
-    private void OnDrawGizmosSelected()
+    public void Basic()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(AttackPosition.position, new Vector3(AttackRangeX, AttackRangeY, 1));
-    }
+        sound.PlayBasic();
+        anim.Play("BasicAttack");
 
+        //memunculkan peluru pada posisi gameobject shootpos
+        Rigidbody2D bPrefab = Instantiate(slash, basicpos.transform.position, basicpos.transform.rotation, gameObject.transform) as Rigidbody2D;
+        //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
+         bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * (bulletSpeed-250), 0));
+    }
     public void Fire()
     {
+        sound.PlayShoot();
+        anim.Play("Shoot");
         //memunculkan peluru pada posisi gameobject shootpos
         Rigidbody2D bPrefab = Instantiate(bulletPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
+        //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
+        bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
+    }
+    public void Spark()
+    {
+        sound.PlaySpark();
+        anim.Play("Shoot");
+        //memunculkan peluru pada posisi gameobject shootpos
+        Rigidbody2D bPrefab = Instantiate(sparkPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
         //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
         bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
     }
