@@ -9,6 +9,11 @@ TagManager:
   - Ground
   - Coin
   - Enemy Fly
+  - Bullet
+  - Skill_Spark
+  - Skill_Slash
+  - Boss
+  - Attack_Posisi_Player
   layers:
   - Default
   - TransparentFX

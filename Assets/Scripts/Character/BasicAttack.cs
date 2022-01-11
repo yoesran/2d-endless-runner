@@ -42,8 +42,9 @@ public class BasicAttack : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        transform.position = Player.transform.position;
         timer += Time.deltaTime;
         if (timer > lifetime)
         {

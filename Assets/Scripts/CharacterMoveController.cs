@@ -241,7 +241,8 @@ public class CharacterMoveController : MonoBehaviour
         //memunculkan peluru pada posisi gameobject shootpos
         Rigidbody2D bPrefab = Instantiate(slash, basicpos.transform.position, basicpos.transform.rotation, gameObject.transform) as Rigidbody2D;
         //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
-         bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * (bulletSpeed-250), 0));
+       // bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * (bulletSpeed-250), 0));
+        //bPrefab.GetComponent<Rigidbody2D>().transform.position = transform.position;
     }
     public void Fire()
     {

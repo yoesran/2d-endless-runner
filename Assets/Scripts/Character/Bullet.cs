@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     CharacterMoveController Player;
-    public int lifetime = 2;
+    public float lifetime = 3f;
     private float timer;
 
 
