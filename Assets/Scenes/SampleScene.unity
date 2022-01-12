@@ -1143,7 +1143,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &603877849
 Transform:
   m_ObjectHideFlags: 0
@@ -2036,7 +2036,7 @@ GameObject:
   - component: {fileID: 1222738176}
   - component: {fileID: 1222738175}
   m_Layer: 5
-  m_Name: BasicAttack
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2118,7 +2118,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1222738175}
-        m_MethodName: BasicAttack
+        m_MethodName: Sword
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2632,7 +2632,7 @@ GameObject:
   - component: {fileID: 1441175059}
   - component: {fileID: 1441175058}
   m_Layer: 5
-  m_Name: Slot (2)
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4093,7 +4093,7 @@ GameObject:
   - component: {fileID: 1970924111}
   - component: {fileID: 1970924110}
   m_Layer: 5
-  m_Name: BasicAttack_Bg
+  m_Name: Sword_Bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4299,7 +4299,7 @@ BoxCollider2D:
   m_Offset: {x: -0.13610473, y: -0.13141823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.21600673}
+    pivot: {x: 0.5, y: 0.2160067}
     oldSize: {x: 19.199999, y: 10.799999}
     newSize: {x: 19.2, y: 10.8}
     adaptiveTilingThreshold: 0.5

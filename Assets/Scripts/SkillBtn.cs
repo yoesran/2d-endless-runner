@@ -34,6 +34,15 @@ public class SkillBtn : MonoBehaviour
             StartCoroutine("CoolDown");
         }
     }
+    public void Sword()
+    {
+        if (!cool)
+        {
+            cool = true;
+            Player.Sword();
+            StartCoroutine("CoolDown");
+        }
+    }
     public void Shoot()
     {
         if (!cool)

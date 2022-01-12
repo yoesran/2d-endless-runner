@@ -241,16 +241,16 @@ public class CharacterMoveController : MonoBehaviour
     {
         sound.PlayBasic();
         anim.Play("BasicAttack");
-        basicAttack.SetActive(true);
-
-        float waktu = 1;
-        if (waktu > 0)
-        {
-            waktu -= Time.deltaTime;
-        }
-        else {
-            basicAttack.SetActive(false);
-        }
+        //memunculkan peluru pada posisi gameobject shootpos
+        //Rigidbody2D bPrefab = Instantiate(slash, basicpos.transform.position, basicpos.transform.rotation, gameObject.transform) as Rigidbody2D;
+        //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
+        // bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * (bulletSpeed-250), 0));
+        //bPrefab.GetComponent<Rigidbody2D>().transform.position = transform.position;
+    }
+    public void Sword()
+    {
+        sound.PlayBasic();
+        anim.Play("SkillSword");
         //memunculkan peluru pada posisi gameobject shootpos
         //Rigidbody2D bPrefab = Instantiate(slash, basicpos.transform.position, basicpos.transform.rotation, gameObject.transform) as Rigidbody2D;
         //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
