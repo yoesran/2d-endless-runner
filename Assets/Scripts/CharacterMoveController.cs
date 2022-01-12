@@ -6,6 +6,7 @@ public class CharacterMoveController : MonoBehaviour
 {
     [Header("Skill")]
     public Rigidbody2D bulletPrefab;
+    Camera_shake Camera;
     public Rigidbody2D slash;
     int e = 1;
     public Rigidbody2D sparkPrefab;
@@ -13,6 +14,7 @@ public class CharacterMoveController : MonoBehaviour
     public float bulletSpeed;
     public GameObject shootPos;
     public GameObject basicpos;
+    public GameObject basicAttack;
 
     public float Health = 100f;
     public float Coins = 0f;
@@ -63,7 +65,7 @@ public class CharacterMoveController : MonoBehaviour
         anim = GetComponent<Animator>();
         sound = GetComponent<CharacterSoundController>();
         lastPositionX = transform.position.x;
-        
+        Camera = FindObjectOfType<Camera_shake>();
     }
 
     private void Update()
@@ -187,26 +189,28 @@ public class CharacterMoveController : MonoBehaviour
 
     */
         }
-        if (tag == "Enemy")
-        {
-            sound.PlayEnemyGroundDestroy();
-            Destroy(col.gameObject);
-            Health -= 20;
-    /*      color.a = 0.1f;
-            GetComponent<Renderer>().material.color = color;
-            StartCoroutine("CoolDown");
-       */
-        }
-        if (tag == "Enemy Fly")
-        {
-            sound.PlayEnemyFlyDestroy();
-            Destroy(col.gameObject);
-            Health -= 30;
-            /*      color.a = 0.1f;
-                    GetComponent<Renderer>().material.color = color;
-                    StartCoroutine("CoolDown");
-               */
-        }
+        //if (tag == "Enemy")
+        //{
+        //    Camera.start = true;
+        //    sound.PlayEnemyGroundDestroy();
+        //    Destroy(col.gameObject);
+        //    Health -= 20;
+        //    /*      color.a = 0.1f;
+        //            GetComponent<Renderer>().material.color = color;
+        //            StartCoroutine("CoolDown");
+        //       */
+        //}
+        //if (tag == "Enemy Fly")
+        //{
+        //    Camera.start = true;
+        //    sound.PlayEnemyFlyDestroy();
+        //    Destroy(col.gameObject);
+        //    Health -= 30;
+        //    /*      color.a = 0.1f;
+        //            GetComponent<Renderer>().material.color = color;
+        //            StartCoroutine("CoolDown");
+        //       */
+        //}
         if (tag == "Coin")
         {
             Destroy(col.gameObject);
@@ -237,11 +241,20 @@ public class CharacterMoveController : MonoBehaviour
     {
         sound.PlayBasic();
         anim.Play("BasicAttack");
+        basicAttack.SetActive(true);
 
+        float waktu = 1;
+        if (waktu > 0)
+        {
+            waktu -= Time.deltaTime;
+        }
+        else {
+            basicAttack.SetActive(false);
+        }
         //memunculkan peluru pada posisi gameobject shootpos
-        Rigidbody2D bPrefab = Instantiate(slash, basicpos.transform.position, basicpos.transform.rotation, gameObject.transform) as Rigidbody2D;
+        //Rigidbody2D bPrefab = Instantiate(slash, basicpos.transform.position, basicpos.transform.rotation, gameObject.transform) as Rigidbody2D;
         //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
-       // bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * (bulletSpeed-250), 0));
+        // bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * (bulletSpeed-250), 0));
         //bPrefab.GetComponent<Rigidbody2D>().transform.position = transform.position;
     }
     public void Fire()

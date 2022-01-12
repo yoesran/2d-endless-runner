@@ -18,6 +18,13 @@ public class SkillBtn : MonoBehaviour
         Player = FindObjectOfType<CharacterMoveController>();
     }
 
+    public void JumpButton()
+    {
+        if (!cool)
+        {
+            Player.JumpButton();
+        }
+    }
     public void BasicAttack()
     {
         if (!cool)

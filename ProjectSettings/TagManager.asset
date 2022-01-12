@@ -14,6 +14,7 @@ TagManager:
   - Skill_Slash
   - Boss
   - Attack_Posisi_Player
+  - Col_player
   layers:
   - Default
   - TransparentFX
