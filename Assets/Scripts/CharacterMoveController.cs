@@ -15,6 +15,7 @@ public class CharacterMoveController : MonoBehaviour
     public GameObject shootPos;
     public GameObject basicpos;
     public GameObject basicAttack;
+    public GameObject Death_effect_character;
 
     public float Health = 100f;
     public float Coins = 0f;
@@ -48,7 +49,7 @@ public class CharacterMoveController : MonoBehaviour
 
     private Rigidbody2D rig;
     private Animator anim;
-    private CharacterSoundController sound;
+    public CharacterSoundController sound;
     public Color color = Color.red;
     
 
@@ -106,6 +107,7 @@ public class CharacterMoveController : MonoBehaviour
         // game over
         if (Health<=0f)
         {
+            Instantiate(Death_effect_character, transform.position, Quaternion.identity);
             sound.PlayPlayerDestroy();
             GameOver();
             Destroy(this.gameObject);
@@ -211,16 +213,16 @@ public class CharacterMoveController : MonoBehaviour
         //            StartCoroutine("CoolDown");
         //       */
         //}
-        if (tag == "Coin")
-        {
-            Destroy(col.gameObject);
-            Coins += 1;
-            sound.PlayCoin();
-            /*      color.a = 0.1f;
-                    GetComponent<Renderer>().material.color = color;
-                    StartCoroutine("CoolDown");
-               */
-        }
+        //if (tag == "Coin")
+        //{
+        //    Destroy(col.gameObject);
+        //    Coins += 1;
+        //    sound.PlayCoin();
+        //    /*      color.a = 0.1f;
+        //            GetComponent<Renderer>().material.color = color;
+        //            StartCoroutine("CoolDown");
+        //       */
+        //}
     }
 
     void OnCollisionEnter2D(Collision2D collision)

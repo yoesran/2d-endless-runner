@@ -57,5 +57,15 @@ public class Col_Player : MonoBehaviour
             Player.Coins += 10;
             Player.Health -= 20;
         }
+        if (tag == "Coin")
+        {
+            Destroy(col.gameObject);
+            Player.Coins += 1;
+            Player.sound.PlayCoin();
+            /*      color.a = 0.1f;
+                    GetComponent<Renderer>().material.color = color;
+                    StartCoroutine("CoolDown");
+               */
+        }
     }
 }
