@@ -64,7 +64,6 @@
     <Compile Include="Assets\Scripts\Camera_shake.cs" />
     <Compile Include="Assets\Scripts\CameraMoveController.cs" />
     <Compile Include="Assets\Scripts\Character\BasicAttack.cs" />
-    <Compile Include="Assets\Scripts\Character\Boss.cs" />
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
     <Compile Include="Assets\Scripts\Character\Col_Basic.cs" />
     <Compile Include="Assets\Scripts\Character\Col_Player.cs" />
@@ -73,6 +72,7 @@
     <Compile Include="Assets\Scripts\CharacterSoundController.cs" />
     <Compile Include="Assets\Scripts\CoinsController.cs" />
     <Compile Include="Assets\Scripts\CoinsData.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss_Bullet.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss_Health.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyDaratTanpaBolakBalik.cs" />
@@ -84,8 +84,8 @@
     <Compile Include="Assets\Scripts\ObstaclesGeneratorController.cs" />
     <Compile Include="Assets\Scripts\PlatformGeneratorController.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
-    <Compile Include="Assets\Scripts\ScoreData.cs" />
     <Compile Include="Assets\Scripts\SkillBtn.cs" />
+    <Compile Include="Assets\Scripts\Sound\SoundControllerAll.cs" />
     <Compile Include="Assets\Scripts\TerrainGeneratorController.cs" />
     <Compile Include="Assets\Scripts\TerrainTemplateController.cs" />
     <Compile Include="Assets\Scripts\UIGameOverController.cs" />

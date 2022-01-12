@@ -20,7 +20,6 @@ public class CharacterMoveController : MonoBehaviour
     public float Health = 100f;
     public float Coins = 0f;
     float BlinkCooldown;
-    float BlinkTime = 0.5f;
     public GameObject Object_Player;
     
 
@@ -62,6 +61,7 @@ public class CharacterMoveController : MonoBehaviour
 
     private void Start()
     {
+        
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sound = GetComponent<CharacterSoundController>();
@@ -177,52 +177,6 @@ public class CharacterMoveController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Debug.DrawLine(transform.position, transform.position + (Vector3.down * groundRaycastDistance), Color.white);
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        string tag = col.gameObject.tag;
-        if (tag == "Obstacle")
-        {
-            Health -= 10;
-     /*      color.a = 0.1f;
-            GetComponent<Renderer>().material.color = color;
-            StartCoroutine("CoolDown");
-
-    */
-        }
-        //if (tag == "Enemy")
-        //{
-        //    Camera.start = true;
-        //    sound.PlayEnemyGroundDestroy();
-        //    Destroy(col.gameObject);
-        //    Health -= 20;
-        //    /*      color.a = 0.1f;
-        //            GetComponent<Renderer>().material.color = color;
-        //            StartCoroutine("CoolDown");
-        //       */
-        //}
-        //if (tag == "Enemy Fly")
-        //{
-        //    Camera.start = true;
-        //    sound.PlayEnemyFlyDestroy();
-        //    Destroy(col.gameObject);
-        //    Health -= 30;
-        //    /*      color.a = 0.1f;
-        //            GetComponent<Renderer>().material.color = color;
-        //            StartCoroutine("CoolDown");
-        //       */
-        //}
-        //if (tag == "Coin")
-        //{
-        //    Destroy(col.gameObject);
-        //    Coins += 1;
-        //    sound.PlayCoin();
-        //    /*      color.a = 0.1f;
-        //            GetComponent<Renderer>().material.color = color;
-        //            StartCoroutine("CoolDown");
-        //       */
-        //}
     }
 
     void OnCollisionEnter2D(Collision2D collision)

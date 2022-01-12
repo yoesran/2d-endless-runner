@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss_Bullet : MonoBehaviour
 {
+    SoundControllerAll sound_controller_all;
     CharacterMoveController Player;
     public float lifetime = 3f;
     private float timer;
@@ -11,6 +12,7 @@ public class Boss_Bullet : MonoBehaviour
 
     private void Start()
     {
+        sound_controller_all = FindObjectOfType<SoundControllerAll>();
         Player = FindObjectOfType<CharacterMoveController>();
     }
     void OnTriggerEnter2D(Collider2D col)
@@ -18,6 +20,7 @@ public class Boss_Bullet : MonoBehaviour
         string tag = col.gameObject.tag;
         if (tag == "Player")
         {
+            sound_controller_all.PlayPayer_Hurt();
             Player.Health -= 10;
             Destroy(gameObject);
         }

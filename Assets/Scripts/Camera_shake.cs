@@ -7,9 +7,16 @@ public class Camera_shake : MonoBehaviour
     public bool start = false;
     public AnimationCurve curve;
     public float duration = 1f;
+    private AudioSource audioPlayer;
+    public AudioClip enemy_die;
 
-    void Update() {
+    private void Start()
+    {
+        audioPlayer = GetComponent<AudioSource>();
+    }
+    private void Update() {
         if (start) {
+            PlayEnemy_Die();
             start = false;
             StartCoroutine(Shaking());
         }
@@ -26,5 +33,11 @@ public class Camera_shake : MonoBehaviour
             yield return null;
         }
         transform.position = startPosition;
+    }
+
+
+    public void PlayEnemy_Die()
+    {
+        audioPlayer.PlayOneShot(enemy_die);
     }
 }
