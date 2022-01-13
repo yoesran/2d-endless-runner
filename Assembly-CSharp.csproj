@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\ObstaclesGeneratorController.cs" />
     <Compile Include="Assets\Scripts\PlatformGeneratorController.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
+    <Compile Include="Assets\Scripts\Shop\ShopScript.cs" />
     <Compile Include="Assets\Scripts\SkillBtn.cs" />
     <Compile Include="Assets\Scripts\Sound\SoundControllerAll.cs" />
     <Compile Include="Assets\Scripts\TerrainGeneratorController.cs" />
