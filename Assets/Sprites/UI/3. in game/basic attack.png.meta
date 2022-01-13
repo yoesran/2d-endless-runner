@@ -77,18 +77,18 @@ TextureImporter:
       name: basic attack_0
       rect:
         serializedVersion: 2
-        x: 1610
-        y: 64
-        width: 255
-        height: 246
+        x: 1616
+        y: 68
+        width: 239
+        height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bb8cd6b774941f49850e5445e7b3946
+      spriteID: 438cdd907087b17439ca528887a841be
       vertices: []
       indices: 
       edges: []

@@ -142,3 +142,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 3
+  Hurt_effect: {fileID: 4433923275305646481, guid: 1f3cb6a59933c4b469768da033549213,
+    type: 3}

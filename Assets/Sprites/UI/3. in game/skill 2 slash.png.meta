@@ -77,18 +77,18 @@ TextureImporter:
       name: skill 2 slash_0
       rect:
         serializedVersion: 2
-        x: 1471
-        y: 277
-        width: 173
-        height: 172
+        x: 1473
+        y: 279
+        width: 171
+        height: 169
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76124706876d6fc4b8906cb939f969f3
+      spriteID: b61404e5e618bc242b68e7d9f8e3ca6f
       vertices: []
       indices: 
       edges: []

@@ -77,18 +77,18 @@ TextureImporter:
       name: jump_0
       rect:
         serializedVersion: 2
-        x: 108
-        y: 71
-        width: 240
-        height: 239
+        x: 112
+        y: 76
+        width: 232
+        height: 230
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd0e526a4b69e104da64741135dcdf67
+      spriteID: 0efd6d0c7a9025241b32427373fd95f9
       vertices: []
       indices: 
       edges: []

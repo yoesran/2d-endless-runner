@@ -78,18 +78,18 @@ TextureImporter:
       name: skill 1 laser_0
       rect:
         serializedVersion: 2
-        x: 1385
-        y: 84
-        width: 174
-        height: 175
+        x: 1388
+        y: 87
+        width: 169
+        height: 169
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de13b6be6bb09634bba3a268688f392b
+      spriteID: 063f79bff63a8bc45ac0ee0c3b23582b
       vertices: []
       indices: 
       edges: []

@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Health_Bar.cs" />
     <Compile Include="Assets\Scripts\LoopGeneratorController.cs" />
     <Compile Include="Assets\Scripts\ObstaclesGeneratorController.cs" />
+    <Compile Include="Assets\Scripts\Pause_Controller.cs" />
     <Compile Include="Assets\Scripts\PlatformGeneratorController.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopScript.cs" />

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    public GameObject GameWin;
     SoundControllerAll sound_controller_all;
     [Header("Skill")]
     public Rigidbody2D bulletPrefab;
@@ -132,7 +133,7 @@ public class Boss : MonoBehaviour
             Camera.start = true;
             Instantiate(Death_effect, col.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-
+            Win();
         }
         else if(Health <= 50f )
         {
@@ -168,4 +169,16 @@ public class Boss : MonoBehaviour
     //    //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
     //    bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
     //}
+    private void Win()
+    {
+        // set high score
+        //      score.FinishScoring();
+        Time.timeScale = 0f;
+        // stop camera movement
+        // show gameover
+        GameWin.SetActive(true);
+
+        // disable this too
+        this.enabled = false;
+    }
 }

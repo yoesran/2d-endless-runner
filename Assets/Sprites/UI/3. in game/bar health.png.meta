@@ -78,18 +78,18 @@ TextureImporter:
       name: bar health_0
       rect:
         serializedVersion: 2
-        x: 56
-        y: 949
-        width: 649
-        height: 78
+        x: 57
+        y: 957
+        width: 645
+        height: 71
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f7399889769f734c82fc06ac9f31d66
+      spriteID: 7506ea2bdf25d554a88f5b056b64093a
       vertices: []
       indices: 
       edges: []

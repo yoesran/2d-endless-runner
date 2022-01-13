@@ -77,18 +77,18 @@ TextureImporter:
       name: skill 2 explosion_0
       rect:
         serializedVersion: 2
-        x: 1692
-        y: 332
-        width: 180
-        height: 178
+        x: 1696
+        y: 336
+        width: 172
+        height: 172
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ff39df13963a254885b83e39d2a0274
+      spriteID: 6172895e68967f34e880a590399cbc6c
       vertices: []
       indices: 
       edges: []

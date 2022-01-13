@@ -162,8 +162,8 @@ public class CharacterMoveController : MonoBehaviour
     private void GameOver()
     {
         // set high score
-  //      score.FinishScoring();
-
+        //      score.FinishScoring();
+        Time.timeScale = 0f;
         // stop camera movement
         gameCamera.enabled = false;
 

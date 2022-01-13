@@ -8,7 +8,7 @@ public class Boss_Bullet : MonoBehaviour
     CharacterMoveController Player;
     public float lifetime = 3f;
     private float timer;
-
+    public GameObject Hurt_effect;
 
     private void Start()
     {
@@ -20,6 +20,7 @@ public class Boss_Bullet : MonoBehaviour
         string tag = col.gameObject.tag;
         if (tag == "Player")
         {
+            Instantiate(Hurt_effect, transform.position, Quaternion.identity);
             sound_controller_all.PlayPayer_Hurt();
             Player.Health -= 10;
             Destroy(gameObject);

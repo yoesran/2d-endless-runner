@@ -10,6 +10,7 @@ public class Col_Player : MonoBehaviour
     //float lifetime = 4f;
     //private float timer;
     public GameObject Death_effect;
+    public GameObject Hurt_effect;
     private Animator camAnim;
 
     private void Start()
@@ -31,6 +32,7 @@ public class Col_Player : MonoBehaviour
             sound_controller_all.PlayPayer_Hurt();
             Camera.start = true;
             Instantiate(Death_effect, col.transform.position, Quaternion.identity);
+            Instantiate(Hurt_effect, transform.position, Quaternion.identity);
             camAnim.Play("Shake");
             Destroy(col.gameObject);
             Player.Coins += 5;
@@ -41,6 +43,7 @@ public class Col_Player : MonoBehaviour
             sound_controller_all.PlayPayer_Hurt();
             Camera.start = true;
             Instantiate(Death_effect, col.transform.position, Quaternion.identity);
+            Instantiate(Hurt_effect, transform.position, Quaternion.identity);
             Destroy(col.gameObject);
             Player.Coins += 10;
             Player.Health -= 20;
@@ -51,6 +54,7 @@ public class Col_Player : MonoBehaviour
         string tag = col.gameObject.tag;
         if (tag == "Obstacle")
         {
+            Instantiate(Hurt_effect, transform.position, Quaternion.identity);
             sound_controller_all.PlayPayer_Hurt();
             Player.Health -= 10;
         }
@@ -59,6 +63,7 @@ public class Col_Player : MonoBehaviour
             sound_controller_all.PlayPayer_Hurt();
             Camera.start = true;
             Instantiate(Death_effect, col.transform.position, Quaternion.identity);
+            Instantiate(Hurt_effect, transform.position, Quaternion.identity);
             Destroy(col.gameObject);
             Player.Coins += 5;
             Player.Health -= 20;
@@ -68,6 +73,7 @@ public class Col_Player : MonoBehaviour
             sound_controller_all.PlayPayer_Hurt();
             Camera.start = true;
             Instantiate(Death_effect, col.transform.position, Quaternion.identity);
+            Instantiate(Hurt_effect, transform.position, Quaternion.identity);
             Destroy(col.gameObject);
             Player.Coins += 10;
             Player.Health -= 20;
