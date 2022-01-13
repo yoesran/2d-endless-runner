@@ -40,7 +40,7 @@ public class ScoreController : MonoBehaviour
                 if (level >= 4)
                 {
                     sound_controller_all.PlayBoss_step();
-                    Instantiate(boss, new Vector3(Player.transform.position.x + 25, -2.05f, 0f), Quaternion.identity);
+                    Instantiate(boss, new Vector3(Player.transform.position.x + 25, -2.13f, 0f), Quaternion.identity);
                     boss.transform.localScale = new Vector2(0.7f, 0.7f);
                     boss_health.SetActive(true);
                     scoreboss = score_muncul_boss + 1;
