@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScoreController : MonoBehaviour
 {
+    public GameObject GameWin;
     CharacterMoveController Player;
     SoundControllerAll sound_controller_all;
     public GameObject boss;
@@ -11,14 +12,11 @@ public class ScoreController : MonoBehaviour
     private int currentScore = 0;
     private int scoreboss;
     public int score_muncul_boss;
-    
-
     private void Start()
     {
         // reset
         sound_controller_all = FindObjectOfType<SoundControllerAll>();
         Player = FindObjectOfType<CharacterMoveController>();
-        currentScore = 0;
     }
     private void Update()
     {
@@ -33,7 +31,7 @@ public class ScoreController : MonoBehaviour
             boss_health.SetActive(true);
             scoreboss = score_muncul_boss+1;
         }
-            
+
     }
 
     public float GetCurrentScore()
@@ -45,4 +43,11 @@ public class ScoreController : MonoBehaviour
     {
         currentScore += increment;
     }
+    public void Win()
+    {
+        Time.timeScale = 0f;
+        GameWin.SetActive(true);
+    }
+    
+
 }

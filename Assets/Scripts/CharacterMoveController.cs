@@ -20,7 +20,7 @@ public class CharacterMoveController : MonoBehaviour
     public float Health = 100f;
     public float Coins = 0f;
     float BlinkCooldown;
-    public GameObject Object_Player;
+    
     
 
     [Header("Movement")]

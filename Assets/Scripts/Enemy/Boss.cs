@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    public GameObject GameWin;
+    
     SoundControllerAll sound_controller_all;
+    ScoreController score;
     [Header("Skill")]
     public Rigidbody2D bulletPrefab;
     Camera_shake Camera;
@@ -35,9 +36,10 @@ public class Boss : MonoBehaviour
     private CharacterSoundController sound;
     public Color color = Color.red;
 
-
     private Transform player;
 
+    float cooldown;
+    float CoolTime = 0.5f;
 
     private void Start()
     {
@@ -49,6 +51,7 @@ public class Boss : MonoBehaviour
         Timercad = Timer;
         Timer2cad = Timer2;
         Camera = FindObjectOfType<Camera_shake>();
+        score = FindObjectOfType<ScoreController>();
     }
 
     private void Update()
@@ -132,8 +135,8 @@ public class Boss : MonoBehaviour
             sound_controller_all.stop();
             Camera.start = true;
             Instantiate(Death_effect, col.transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
-            Win();
+            StartCoroutine("CoolDown");
+            Time.timeScale = 0.1f;
         }
         else if(Health <= 50f )
         {
@@ -169,16 +172,25 @@ public class Boss : MonoBehaviour
     //    //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
     //    bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
     //}
-    private void Win()
-    {
-        // set high score
-        //      score.FinishScoring();
-        Time.timeScale = 0f;
-        // stop camera movement
-        // show gameover
-        GameWin.SetActive(true);
 
-        // disable this too
-        this.enabled = false;
+    IEnumerator CoolDown()
+    {
+        cooldown = 0;
+        while (true)
+        {
+            cooldown += Time.deltaTime;
+            if (cooldown > (CoolTime-0.1))
+            {
+                transform.localScale = new Vector2(0, 0);
+            }
+            if (cooldown > CoolTime)
+            {
+
+                Destroy(this.gameObject);
+                StopCoroutine("CoolDown");
+                score.Win();
+            }
+            yield return null;
+        }
     }
 }

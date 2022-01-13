@@ -5,13 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class UIGameOverController : MonoBehaviour
 {
-    // Update is called once per frame
-    private void Update()
+    public void Restart()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            // reload
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void Shop(int scene_id)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(scene_id);
+    }
+    public void Home(int scene_id)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(scene_id);
+    }
+    public void Next(int scene_id)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(scene_id);
     }
 }

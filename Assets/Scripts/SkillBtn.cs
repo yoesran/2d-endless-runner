@@ -8,7 +8,7 @@ public class SkillBtn : MonoBehaviour
     public string SkillName;
     float cooldown;
     public float CoolTime;
-    public float BasicAttackTime=10f;
+    //public float BasicAttackTime=10f;
     public Image CdImg;
     bool cool;
     CharacterMoveController Player;

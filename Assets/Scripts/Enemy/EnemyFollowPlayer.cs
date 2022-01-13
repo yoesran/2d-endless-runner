@@ -12,6 +12,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     private Transform player;
     Vector3 StartPosition;
     public int Health = 10;
+    float distanceFromPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +32,15 @@ public class EnemyFollowPlayer : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         RaycastHit2D groundCheck = Physics2D.Raycast(groundDetect.position, Vector2.down, rayDist);
 
-        float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
-    
+        distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+
         if (distanceFromPlayer < lineOfSite)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, new Vector2(player.position.x, this.transform.position.y), speed * Time.deltaTime);
         }
-        else if (groundCheck.collider==false)
+        else if (groundCheck.collider == false)
         {
-            transform.position = new Vector3(transform.position.x, StartPosition.y,transform.position.z);
+            transform.position = new Vector3(transform.position.x, StartPosition.y, transform.position.z);
             if (movingRight)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
@@ -51,7 +52,7 @@ public class EnemyFollowPlayer : MonoBehaviour
                 movingRight = true;
             }
         }
-        
+
 
     }
     public void TakeDamage(int damage)

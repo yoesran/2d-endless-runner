@@ -582,7 +582,7 @@ RectTransform:
   - {fileID: 1178150133}
   - {fileID: 1229915302}
   m_Father: {fileID: 1816858774}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -819,7 +819,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 99999
+  m_Text: 0
 --- !u!222 &270751262
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1076,7 +1076,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
   CoolTime: 1
-  BasicAttackTime: 3
   CdImg: {fileID: 364668430}
 --- !u!1 &433824235
 GameObject:
@@ -1302,9 +1301,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 724509290}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 724509293}
+        m_MethodName: Shop
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1842,7 +1841,6 @@ GameObject:
   - component: {fileID: 591428259}
   - component: {fileID: 591428262}
   - component: {fileID: 591428261}
-  - component: {fileID: 591428260}
   m_Layer: 5
   m_Name: CoinsText (1)
   m_TagString: Untagged
@@ -1869,20 +1867,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 256.4}
   m_SizeDelta: {x: 125.62302, y: 69.1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &591428260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591428258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a40c455c54e50dc4f8a28d37cd5b7aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentCoins: 0
-  coins: {fileID: 591428261}
 --- !u!114 &591428261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,7 +2062,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 99999
+  m_Text: 0
 --- !u!222 &614626437
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2188,7 +2172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9508d25bb9a6a42997c04d9fe19244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 1936674752754026637, guid: 83eec53be75fd8b4da91b78f5f6a50ba, type: 3}
+  GameWin: {fileID: 724509290}
+  boss: {fileID: 2516425200526545977, guid: 83eec53be75fd8b4da91b78f5f6a50ba, type: 3}
   boss_health: {fileID: 1605221696}
   score_muncul_boss: 15
 --- !u!4 &654799217
@@ -2294,7 +2279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &724509291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2311,7 +2296,7 @@ RectTransform:
   - {fileID: 1563719350}
   - {fileID: 2037097466}
   m_Father: {fileID: 1816858774}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2579,9 +2564,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 225538062}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 225538066}
+        m_MethodName: Home
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2980,8 +2965,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 724509290}
-        m_MethodName: 
+      - m_Target: {fileID: 724509293}
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3173,7 +3158,6 @@ RectTransform:
   - {fileID: 1785290711}
   - {fileID: 1865616611}
   - {fileID: 614626434}
-  - {fileID: 2019590366}
   m_Father: {fileID: 225538063}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3207,20 +3191,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180833469}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1452099970}
   - {fileID: 1781966901}
   - {fileID: 1962447231}
-  m_Father: {fileID: 1816858774}
-  m_RootOrder: 7
+  m_Father: {fileID: 1403869157}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -881.2, y: -464.34808}
+  m_SizeDelta: {x: 1820, y: 980.6963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1180833471
 MonoBehaviour:
@@ -3335,9 +3319,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 724509290}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 724509293}
+        m_MethodName: Home
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3434,7 +3418,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
   CoolTime: 1
-  BasicAttackTime: 3
   CdImg: {fileID: 1222738177}
 --- !u!114 &1222738176
 MonoBehaviour:
@@ -4389,7 +4372,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1180833470}
   m_Father: {fileID: 1816858774}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5059,7 +5043,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
   CoolTime: 5
-  BasicAttackTime: 3
   CdImg: {fileID: 1546960067}
 --- !u!114 &1546960066
 MonoBehaviour:
@@ -5299,9 +5282,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 225538062}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 225538066}
+        m_MethodName: Shop
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5630,7 +5613,6 @@ GameObject:
   - component: {fileID: 1785290711}
   - component: {fileID: 1785290714}
   - component: {fileID: 1785290713}
-  - component: {fileID: 1785290712}
   m_Layer: 5
   m_Name: CoinsText (1)
   m_TagString: Untagged
@@ -5657,20 +5639,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 256.4}
   m_SizeDelta: {x: 125.62302, y: 69.1}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1785290712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785290710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a40c455c54e50dc4f8a28d37cd5b7aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentCoins: 0
-  coins: {fileID: 1785290713}
 --- !u!114 &1785290713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5894,7 +5862,6 @@ RectTransform:
   - {fileID: 1349294081}
   - {fileID: 1605221697}
   - {fileID: 1403869157}
-  - {fileID: 1180833470}
   - {fileID: 225538063}
   - {fileID: 724509291}
   m_Father: {fileID: 0}
@@ -6267,7 +6234,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
   CoolTime: 2
-  BasicAttackTime: 3
   CdImg: {fileID: 1948260311}
 --- !u!114 &1948260310
 MonoBehaviour:
@@ -6637,92 +6603,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005555751}
   m_CullTransparentMesh: 0
---- !u!1 &2019590365
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2019590366}
-  - component: {fileID: 2019590369}
-  - component: {fileID: 2019590368}
-  - component: {fileID: 2019590367}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2019590366
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019590365}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1178150133}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -173.33}
-  m_SizeDelta: {x: 334.6, y: 130.7}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2019590367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019590365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c78abd15fc3d29445b188d100c69cfcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentHealth: 0
---- !u!114 &2019590368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019590365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 0
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &2019590369
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019590365}
-  m_CullTransparentMesh: 0
 --- !u!1 &2037097465
 GameObject:
   m_ObjectHideFlags: 0
@@ -6944,7 +6824,6 @@ MonoBehaviour:
     type: 3}
   Health: 100
   Coins: 0
-  Object_Player: {fileID: 0}
   moveAccel: 5
   maxSpeed: 5
   velocity_y: 20
@@ -7157,8 +7036,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 225538062}
-        m_MethodName: 
+      - m_Target: {fileID: 225538066}
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7281,9 +7160,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 724509290}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 724509293}
+        m_MethodName: Next
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
