@@ -71,26 +71,15 @@ public class CharacterMoveController : MonoBehaviour
 
     private void Update()
     {
-        // change animation
-        //if (BasicAttack == true)
-        //{
-        //    playBasicAttackAnimation();
-        //    Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(AttackPosition.position, new Vector2(AttackRangeX, AttackRangeY), 0, WhatIsEnemies);
-        //    for (int i = 0; i < enemiesToDamage.Length; i++)
-        //    {
-        //        enemiesToDamage[i].GetComponent<EnemyFollowPlayer>().TakeDamage(damage);
-        //        Coins += 5;
-        //    }
-        //    BasicAttack = false;
-
-        //}
+        if (velocity_y <= -50)
+        {
+            Die();
+        }
         if (e == 1)
         {
             sound.PlayStartSound();
             e += 1;
         }    
-
-
         anim.SetBool("Jumping", isJumping);
         anim.SetBool("DoubleJump", DoubleJump);
 
@@ -107,11 +96,7 @@ public class CharacterMoveController : MonoBehaviour
         // game over
         if (Health<=0f)
         {
-            Instantiate(Death_effect_character, transform.position, Quaternion.identity);
-            sound.PlayPlayerDestroy();
-            GameOver();
-            Destroy(this.gameObject);
-
+            Die();
         }
     }
     public void JumpButton()
@@ -136,20 +121,6 @@ public class CharacterMoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // raycast ground
-   /*     RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundRaycastDistance, groundLayerMask);
-        if (hit)
-        {
-            if (!isOnGround && rig.velocity.y <= 0)
-            {
-                isOnGround = true;
-            }
-        }
-        else
-        {
-            isOnGround = false;
-        }
-*/
         // calculate velocity vector
         Vector2 velocityVector = rig.velocity;
 
@@ -161,8 +132,6 @@ public class CharacterMoveController : MonoBehaviour
 
     private void GameOver()
     {
-        // set high score
-        //      score.FinishScoring();
         Time.timeScale = 0f;
         // stop camera movement
         gameCamera.enabled = false;
@@ -197,21 +166,11 @@ public class CharacterMoveController : MonoBehaviour
     {
         sound.PlayBasic();
         anim.Play("BasicAttack");
-        //memunculkan peluru pada posisi gameobject shootpos
-        //Rigidbody2D bPrefab = Instantiate(slash, basicpos.transform.position, basicpos.transform.rotation, gameObject.transform) as Rigidbody2D;
-        //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
-        // bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * (bulletSpeed-250), 0));
-        //bPrefab.GetComponent<Rigidbody2D>().transform.position = transform.position;
     }
     public void Sword()
     {
         sound.PlayBasic();
         anim.Play("SkillSword");
-        //memunculkan peluru pada posisi gameobject shootpos
-        //Rigidbody2D bPrefab = Instantiate(slash, basicpos.transform.position, basicpos.transform.rotation, gameObject.transform) as Rigidbody2D;
-        //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
-        // bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * (bulletSpeed-250), 0));
-        //bPrefab.GetComponent<Rigidbody2D>().transform.position = transform.position;
     }
     public void Fire()
     {
@@ -226,9 +185,14 @@ public class CharacterMoveController : MonoBehaviour
     {
         sound.PlaySpark();
         anim.Play("Shoot");
-        //memunculkan peluru pada posisi gameobject shootpos
         Rigidbody2D bPrefab = Instantiate(sparkPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
-        //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
         bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
+    }
+    private void Die()
+    {
+        Instantiate(Death_effect_character, transform.position, Quaternion.identity);
+        sound.PlayPlayerDestroy();
+        GameOver();
+        Destroy(this.gameObject);
     }
 }

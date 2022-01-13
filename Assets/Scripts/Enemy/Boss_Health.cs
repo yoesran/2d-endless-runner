@@ -7,7 +7,7 @@ public class Boss_Health : MonoBehaviour
 {
     private Image HealthBar;
     public float CurrentHealth;
-    private float MaxHealth = 100f;
+    public static float MaxHealth = 100f;
     Boss Player;
     // Start is called before the first frame update
     void Start()

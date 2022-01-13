@@ -82,7 +82,6 @@
     <Compile Include="Assets\Scripts\Health_Bar.cs" />
     <Compile Include="Assets\Scripts\LoopGeneratorController.cs" />
     <Compile Include="Assets\Scripts\ObstaclesGeneratorController.cs" />
-    <Compile Include="Assets\Scripts\Pause_Controller.cs" />
     <Compile Include="Assets\Scripts\PlatformGeneratorController.cs" />
     <Compile Include="Assets\Scripts\ScoreController.cs" />
     <Compile Include="Assets\Scripts\Shop\ShopScript.cs" />
@@ -90,8 +89,9 @@
     <Compile Include="Assets\Scripts\Sound\SoundControllerAll.cs" />
     <Compile Include="Assets\Scripts\TerrainGeneratorController.cs" />
     <Compile Include="Assets\Scripts\TerrainTemplateController.cs" />
-    <Compile Include="Assets\Scripts\UIGameOverController.cs" />
-    <Compile Include="Assets\Scripts\UIScoreController.cs" />
+    <Compile Include="Assets\Scripts\UI\Pause_Controller.cs" />
+    <Compile Include="Assets\Scripts\UI\UIGameOverController.cs" />
+    <Compile Include="Assets\Scripts\UI\UIScoreController.cs" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>E:/UNITY PROJECT/GITHUB/2d-endless-runner/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>

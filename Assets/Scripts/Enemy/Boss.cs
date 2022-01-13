@@ -9,15 +9,13 @@ public class Boss : MonoBehaviour
     ScoreController score;
     [Header("Skill")]
     public Rigidbody2D bulletPrefab;
+    public Rigidbody2D bulletLaserPrefab;
     Camera_shake Camera;
     public GameObject Death_effect;
-    //public Rigidbody2D slash;
     int e = 1;
-    //public Rigidbody2D sparkPrefab;
     public float bulletPos;
     public float bulletSpeed;
     public GameObject shootPos;
-    //public GameObject basicpos;
     public float Timer = 15f;
     public float Timercad;
     float Timer2 = 5f;
@@ -52,6 +50,11 @@ public class Boss : MonoBehaviour
         Timer2cad = Timer2;
         Camera = FindObjectOfType<Camera_shake>();
         score = FindObjectOfType<ScoreController>();
+        if (score.level >= 4)
+        {
+            Health = 300;
+            Boss_Health.MaxHealth = 300f;
+        }
     }
 
     private void Update()
@@ -82,6 +85,11 @@ public class Boss : MonoBehaviour
         if (Timer2 > 0)
         {
             Timer2 -= Time.deltaTime;
+        }
+        else if (Timer2 == 5f && score.level == 5)
+        {
+            sound_controller_all.PlayBoss_Laser();
+            Laser();
         }
         else
         {
@@ -146,32 +154,20 @@ public class Boss : MonoBehaviour
         }
     }
 
-    //public void Basic()
-    //{
-    //    sound.PlayBasic();
-    //    anim.Play("BasicAttack");
 
-    //    Rigidbody2D bPrefab = Instantiate(slash, basicpos.transform.position, basicpos.transform.rotation, gameObject.transform) as Rigidbody2D;
-    //}
     public void Fire()
     {
-        //sound.PlayShoot();
-        //anim.Play("Shoot");
-        //memunculkan peluru pada posisi gameobject shootpos
         Rigidbody2D bPrefab = Instantiate(bulletPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
-        //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
         bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
         bPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(bPrefab.GetComponent<Rigidbody2D>().velocity.x, Random.Range(-2f, 5f)); ;
     }
-    //public void Spark()
-    //{
-    //    sound.PlaySpark();
-    //    anim.Play("Shoot");
-    //    //memunculkan peluru pada posisi gameobject shootpos
-    //    Rigidbody2D bPrefab = Instantiate(sparkPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
-    //    //memberikan dorongan peluru sebesar bulletSpeed dengan arah terbangnya bulletPos 
-    //    bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
-    //}
+    public void Laser()
+    {
+        Rigidbody2D bPrefab = Instantiate(bulletLaserPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
+        bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
+        bPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(bPrefab.GetComponent<Rigidbody2D>().velocity.x, Random.Range(-2f, 5f)); ;
+    }
+
 
     IEnumerator CoolDown()
     {
