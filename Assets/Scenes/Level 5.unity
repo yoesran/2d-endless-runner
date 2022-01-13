@@ -1152,11 +1152,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 724509293}
         m_MethodName: Shop
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2024,7 +2024,7 @@ MonoBehaviour:
   GameWin: {fileID: 724509290}
   boss: {fileID: 2516425200526545977, guid: 83eec53be75fd8b4da91b78f5f6a50ba, type: 3}
   boss_health: {fileID: 1605221696}
-  score_muncul_boss: 5
+  score_muncul_boss: 100
   level: 5
 --- !u!4 &654799217
 Transform:
@@ -2913,12 +2913,6 @@ MonoBehaviour:
   - {fileID: 114116631534652724, guid: e490d0cd57bdbd0458afada8fe99ec12, type: 3}
   - {fileID: 114116631534652724, guid: 77b01bd30f76ee7419afc2ebc69931e3, type: 3}
   - {fileID: 114116631534652724, guid: eabaf17df3237194d832eb1c7450f0d9, type: 3}
-  - {fileID: 114250358822042630, guid: 09cce2a0035be004faec5d874fa5154a, type: 3}
-  - {fileID: 114250358822042630, guid: 09cce2a0035be004faec5d874fa5154a, type: 3}
-  - {fileID: 114116631534652724, guid: 64a13c7b060924f46a016db24342db2f, type: 3}
-  - {fileID: 114116631534652724, guid: 64a13c7b060924f46a016db24342db2f, type: 3}
-  - {fileID: 114116631534652724, guid: 7527ea530bab0c54484300bc01f22e51, type: 3}
-  - {fileID: 114116631534652724, guid: 7527ea530bab0c54484300bc01f22e51, type: 3}
   terrainTemplateWidth: 20
   gameCamera: {fileID: 519420031}
   areaStartOffset: -17.26
@@ -4478,7 +4472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainTemplates:
   - {fileID: 114116631534652724, guid: e63afba43ae9d7242a388597d6de376d, type: 3}
-  - {fileID: 114116631534652724, guid: ff7d7f54ac3ddae448b63f7a039e4e18, type: 3}
+  - {fileID: 114116631534652724, guid: e63afba43ae9d7242a388597d6de376d, type: 3}
   - {fileID: 114116631534652724, guid: 1821fe8f5a5c9514b8869073e82f6b7b, type: 3}
   - {fileID: 114116631534652724, guid: ff7d7f54ac3ddae448b63f7a039e4e18, type: 3}
   terrainTemplateWidth: 9
@@ -4990,11 +4984,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 225538066}
         m_MethodName: Shop
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

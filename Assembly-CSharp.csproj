@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Sound\SoundControllerAll.cs" />
     <Compile Include="Assets\Scripts\TerrainGeneratorController.cs" />
     <Compile Include="Assets\Scripts\TerrainTemplateController.cs" />
+    <Compile Include="Assets\Scripts\UI\LevelManager.cs" />
     <Compile Include="Assets\Scripts\UI\Pause_Controller.cs" />
     <Compile Include="Assets\Scripts\UI\UIGameOverController.cs" />
     <Compile Include="Assets\Scripts\UI\UIScoreController.cs" />

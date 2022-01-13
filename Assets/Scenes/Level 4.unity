@@ -1152,7 +1152,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 724509293}
         m_MethodName: Shop
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2913,10 +2913,6 @@ MonoBehaviour:
   - {fileID: 114116631534652724, guid: e490d0cd57bdbd0458afada8fe99ec12, type: 3}
   - {fileID: 114116631534652724, guid: 77b01bd30f76ee7419afc2ebc69931e3, type: 3}
   - {fileID: 114116631534652724, guid: eabaf17df3237194d832eb1c7450f0d9, type: 3}
-  - {fileID: 114116631534652724, guid: eabaf17df3237194d832eb1c7450f0d9, type: 3}
-  - {fileID: 114250358822042630, guid: 09cce2a0035be004faec5d874fa5154a, type: 3}
-  - {fileID: 114116631534652724, guid: 64a13c7b060924f46a016db24342db2f, type: 3}
-  - {fileID: 114116631534652724, guid: 7527ea530bab0c54484300bc01f22e51, type: 3}
   terrainTemplateWidth: 20
   gameCamera: {fileID: 519420031}
   areaStartOffset: -17.26
@@ -4988,7 +4984,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 225538066}
         m_MethodName: Shop
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

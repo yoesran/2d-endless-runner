@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreController : MonoBehaviour
 {
@@ -73,6 +74,11 @@ public class ScoreController : MonoBehaviour
     {
         Time.timeScale = 0f;
         GameWin.SetActive(true);
+        int a = PlayerPrefs.GetInt("level_unlocked");
+        if (a <= level)
+        {
+            PlayerPrefs.SetInt("level_unlocked", level + 1);
+        }
     }
     
 

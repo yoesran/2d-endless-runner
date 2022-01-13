@@ -86,11 +86,6 @@ public class Boss : MonoBehaviour
         {
             Timer2 -= Time.deltaTime;
         }
-        else if (Timer2 == 5f && score.level == 5)
-        {
-            sound_controller_all.PlayBoss_Laser();
-            Laser();
-        }
         else
         {
             sound_controller_all.PlayBoss_Laser();
@@ -157,15 +152,14 @@ public class Boss : MonoBehaviour
 
     public void Fire()
     {
+        float ran= Random.Range(-2f, 5f);
+        if (score.level >= 5)
+        {
+            ran = player.position.y;
+        }
         Rigidbody2D bPrefab = Instantiate(bulletPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
         bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
-        bPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(bPrefab.GetComponent<Rigidbody2D>().velocity.x, Random.Range(-2f, 5f)); ;
-    }
-    public void Laser()
-    {
-        Rigidbody2D bPrefab = Instantiate(bulletLaserPrefab, shootPos.transform.position, shootPos.transform.rotation) as Rigidbody2D;
-        bPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(bulletPos * bulletSpeed, 0));
-        bPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(bPrefab.GetComponent<Rigidbody2D>().velocity.x, Random.Range(-2f, 5f)); ;
+        bPrefab.GetComponent<Rigidbody2D>().velocity = new Vector2(bPrefab.GetComponent<Rigidbody2D>().velocity.x, ran); ;
     }
 
 
