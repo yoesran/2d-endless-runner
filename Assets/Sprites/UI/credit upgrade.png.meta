@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 68c88622d601cb34d9b3f2f757dc0271
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: credit upgrade_0
+    21300002: credit upgrade_1
+    21300004: credit upgrade_2
+    21300006: credit upgrade_3
+    21300008: credit upgrade_4
+    21300010: credit upgrade_5
+    21300012: credit upgrade_6
+    21300014: credit upgrade_7
+    21300016: credit upgrade_8
+    21300018: credit upgrade_9
+    21300020: credit upgrade_10
+    21300022: credit upgrade_11
+    21300024: credit upgrade_12
+    21300026: credit upgrade_13
+    21300028: credit upgrade_14
+    21300030: credit upgrade_15
+    21300032: credit upgrade_16
+    21300034: credit upgrade_17
+    21300036: credit upgrade_18
+    21300038: credit upgrade_19
+    21300040: credit upgrade_20
+    21300042: credit upgrade_21
+    21300044: credit upgrade_22
+    21300046: credit upgrade_23
+    21300048: credit upgrade_24
+    21300050: credit upgrade_25
+    21300052: credit upgrade_26
+    21300054: credit upgrade_27
+    21300056: credit upgrade_28
+    21300058: credit upgrade_29
+    21300060: credit upgrade_30
+    21300062: credit upgrade_31
+    21300064: credit upgrade_32
+    21300066: credit upgrade_33
+    21300068: credit upgrade_34
+    21300070: credit upgrade_35
+    21300072: credit upgrade_36
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: credit upgrade_0
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 821
+        width: 636
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d3555d6b69b554cb86ffa943b562ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: credit upgrade_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 648
+        width: 673
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca79f43a587e1d34e9ae1e29a0260330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: credit upgrade_2
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 648
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edfe63bd55e6f9498bdcb89ef4f0342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: credit upgrade_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bc3ffc780e1764da3755ab48423592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: credit upgrade_4
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 432
+        width: 672
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24009494fa2e1141be7de2fbc952300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: credit upgrade_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 432
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8eb4b6639c6124d96a789cb9068318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: credit upgrade_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 640
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d300c0b01c238ab4191a6cdd10b87674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: credit upgrade_7
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 216
+        width: 671
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d56539633c7a04885c66bbeda90b8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: credit upgrade_8
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 262
+        width: 324
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e414d0dfb7d70c241ac5462d8540b918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: credit upgrade_9
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 128
+        width: 323
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5699d5050f88c51439075832f8199f8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ac23360267946064ba2341d7882ffca0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

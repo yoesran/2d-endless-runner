@@ -10,10 +10,11 @@ public class UIGameOverController : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void Shop(int scene_id)
+    public void Shop(int currentScene)
     {
+        PlayerPrefs.SetInt("lastSceneId", currentScene);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(scene_id);
+        SceneManager.LoadScene(3);
     }
     public void Home(int scene_id)
     {
@@ -24,5 +25,10 @@ public class UIGameOverController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(scene_id);
+    }
+    public void Back()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(PlayerPrefs.GetInt("lastSceneId"));
     }
 }
