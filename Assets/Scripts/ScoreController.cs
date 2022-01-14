@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ScoreController : MonoBehaviour
 {
+    CoinsController coins;
     public GameObject GameWin;
     CharacterMoveController Player;
     SoundControllerAll sound_controller_all;
@@ -19,6 +20,7 @@ public class ScoreController : MonoBehaviour
         // reset
         sound_controller_all = FindObjectOfType<SoundControllerAll>();
         Player = FindObjectOfType<CharacterMoveController>();
+        coins = FindObjectOfType<CoinsController>();
         Time.timeScale = 1f;
     }
     private void Update()
@@ -72,6 +74,7 @@ public class ScoreController : MonoBehaviour
     }
     public void Win()
     {
+        coins.FinishCoins();
         Time.timeScale = 0f;
         GameWin.SetActive(true);
         int a = PlayerPrefs.GetInt("level_unlocked");

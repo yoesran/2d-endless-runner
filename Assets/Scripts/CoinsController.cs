@@ -29,6 +29,8 @@ public class CoinsController : MonoBehaviour
     public void FinishCoins()
     {
         // set high score
-            CoinsData.TotalCoins += currentCoins;
+        float a = PlayerPrefs.GetFloat("Coins");
+        PlayerPrefs.SetFloat("Coins", a += currentCoins);
+
     }
 }

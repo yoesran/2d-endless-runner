@@ -998,7 +998,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
-  CoolTime: 1
   CdImg: {fileID: 364668430}
 --- !u!1 &452567697
 GameObject:
@@ -3273,7 +3272,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
-  CoolTime: 1
   CdImg: {fileID: 1222738177}
 --- !u!114 &1222738176
 MonoBehaviour:
@@ -4750,7 +4748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
-  CoolTime: 5
   CdImg: {fileID: 1546960067}
 --- !u!114 &1546960066
 MonoBehaviour:
@@ -5939,7 +5936,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SkillName: Basic Attack
-  CoolTime: 2
   CdImg: {fileID: 1948260311}
 --- !u!114 &1948260310
 MonoBehaviour:

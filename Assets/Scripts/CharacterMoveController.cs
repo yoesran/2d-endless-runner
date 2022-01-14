@@ -19,7 +19,6 @@ public class CharacterMoveController : MonoBehaviour
 
     public float Health = 100f;
     public float Coins = 0f;
-    float BlinkCooldown;
     
     
 
@@ -50,7 +49,7 @@ public class CharacterMoveController : MonoBehaviour
     private Animator anim;
     public CharacterSoundController sound;
     public Color color = Color.red;
-    
+    CoinsController coins;
 
     public static bool isJumping = false;
     public bool canDoubleJump = false;
@@ -67,6 +66,7 @@ public class CharacterMoveController : MonoBehaviour
         sound = GetComponent<CharacterSoundController>();
         lastPositionX = transform.position.x;
         Camera = FindObjectOfType<Camera_shake>();
+        coins = FindObjectOfType<CoinsController>();
     }
 
     private void Update()
@@ -190,6 +190,8 @@ public class CharacterMoveController : MonoBehaviour
     }
     private void Die()
     {
+        coins.FinishCoins();
+        Time.timeScale = 0f;
         Instantiate(Death_effect_character, transform.position, Quaternion.identity);
         sound.PlayPlayerDestroy();
         GameOver();

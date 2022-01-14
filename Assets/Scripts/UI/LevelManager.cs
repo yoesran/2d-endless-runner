@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     }
     public void DeleteAllPlayerPrefs()
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("level_unlocked");
         Application.LoadLevel(Application.loadedLevel);
     }
 }

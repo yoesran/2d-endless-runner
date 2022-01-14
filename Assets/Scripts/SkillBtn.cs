@@ -7,7 +7,11 @@ public class SkillBtn : MonoBehaviour
 {
     public string SkillName;
     float cooldown;
-    public float CoolTime;
+    float CoolTime;
+    float CoolTime_basic = 1;
+    float CoolTime_shoot = 5;
+    float CoolTime_sword = 5;
+    float CoolTime_spark = 15;
     //public float BasicAttackTime=10f;
     public Image CdImg;
     bool cool;
@@ -16,6 +20,9 @@ public class SkillBtn : MonoBehaviour
     void Start()
     {
         Player = FindObjectOfType<CharacterMoveController>();
+        CoolTime_shoot = CoolTime_shoot - CoolTime_shoot * (PlayerPrefs.GetFloat("Shoot") / 100);
+        CoolTime_sword = CoolTime_sword - CoolTime_sword * (PlayerPrefs.GetFloat("Sword") / 100);
+        CoolTime_spark = CoolTime_spark - CoolTime_spark * (PlayerPrefs.GetFloat("Spark") / 100);
     }
 
     public void JumpButton()
@@ -31,6 +38,7 @@ public class SkillBtn : MonoBehaviour
         {
             cool = true;
             Player.Basic();
+            CoolTime = CoolTime_basic;
             StartCoroutine("CoolDown");
         }
     }
@@ -40,6 +48,7 @@ public class SkillBtn : MonoBehaviour
         {
             cool = true;
             Player.Sword();
+            CoolTime = CoolTime_sword;
             StartCoroutine("CoolDown");
         }
     }
@@ -49,6 +58,7 @@ public class SkillBtn : MonoBehaviour
         {
             cool = true;
             Player.Fire();
+            CoolTime = CoolTime_shoot;
             StartCoroutine("CoolDown");
         }
     }
@@ -58,6 +68,7 @@ public class SkillBtn : MonoBehaviour
         {
             cool = true;
             Player.Spark();
+            CoolTime = CoolTime_spark;
             StartCoroutine("CoolDown");
         }
     }

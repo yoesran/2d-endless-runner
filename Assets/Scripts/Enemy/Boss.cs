@@ -9,7 +9,6 @@ public class Boss : MonoBehaviour
     ScoreController score;
     [Header("Skill")]
     public Rigidbody2D bulletPrefab;
-    public Rigidbody2D bulletLaserPrefab;
     Camera_shake Camera;
     public GameObject Death_effect;
     int e = 1;
@@ -137,7 +136,8 @@ public class Boss : MonoBehaviour
         {
             sound_controller_all.stop();
             Camera.start = true;
-            Instantiate(Death_effect, col.transform.position, Quaternion.identity);
+            Instantiate(Death_effect, transform.position, Quaternion.identity);
+            Instantiate(Death_effect, transform.position, Quaternion.identity);
             StartCoroutine("CoolDown");
             Time.timeScale = 0.1f;
         }
