@@ -2023,7 +2023,7 @@ MonoBehaviour:
   GameWin: {fileID: 724509290}
   boss: {fileID: 2516425200526545977, guid: 83eec53be75fd8b4da91b78f5f6a50ba, type: 3}
   boss_health: {fileID: 1605221696}
-  score_muncul_boss: 100
+  score_muncul_boss: 5
   level: 4
 --- !u!4 &654799217
 Transform:
@@ -3880,7 +3880,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 836, y: -415}
+  m_AnchoredPosition: {x: 836, y: -383.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1363966501

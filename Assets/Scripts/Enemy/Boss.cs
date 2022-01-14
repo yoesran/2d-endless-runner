@@ -53,6 +53,8 @@ public class Boss : MonoBehaviour
         {
             Health = 300;
             Boss_Health.MaxHealth = 300f;
+            transform.localScale += new Vector3(0.1f, 0.1f, 0);
+            transform.position = new Vector2(this.transform.position.x,this.transform.position.y+0.3f);
         }
     }
 
@@ -141,7 +143,7 @@ public class Boss : MonoBehaviour
             StartCoroutine("CoolDown");
             Time.timeScale = 0.1f;
         }
-        else if(Health <= 50f )
+        else if(Health <= Health/2)
         {
             sound_controller_all.PlayBoss_Malfunction();
             GetComponent<Renderer>().material.color = Color.red;

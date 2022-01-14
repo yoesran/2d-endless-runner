@@ -25,42 +25,27 @@ public class ScoreController : MonoBehaviour
     }
     private void Update()
     {
-        if (level == 1)
+        if (scoreboss < score_muncul_boss)
         {
-            if (currentScore == score_muncul_boss)
+            scoreboss = currentScore;
+        }
+        if (scoreboss == score_muncul_boss)
+        {
+            if (level == 1)
             {
+                Time.timeScale = 0.1f;
                 Win();
+                scoreboss = score_muncul_boss + 1;
+            }
+            else
+            {
+                sound_controller_all.PlayBoss_step();
+                Instantiate(boss, new Vector3(Player.transform.position.x + 25, -2.730872f, 0f), Quaternion.identity);
+                boss.transform.localScale = new Vector2(0.5f, 0.5f);
+                boss_health.SetActive(true);
+                scoreboss = score_muncul_boss + 1;
             }
         }
-        else
-        {
-            if (scoreboss < score_muncul_boss)
-            {
-                scoreboss = currentScore;
-            }
-            if (scoreboss == score_muncul_boss)
-            {
-                if (level >= 4)
-                {
-                    sound_controller_all.PlayBoss_step();
-                    Instantiate(boss, new Vector3(Player.transform.position.x + 25, -2.13f, 0f), Quaternion.identity);
-                    boss.transform.localScale = new Vector2(0.7f, 0.7f);
-                    boss_health.SetActive(true);
-                    scoreboss = score_muncul_boss + 1;
-                }
-                else
-                {
-                    sound_controller_all.PlayBoss_step();
-                    Instantiate(boss, new Vector3(Player.transform.position.x + 25, -2.730872f, 0f), Quaternion.identity);
-                    boss.transform.localScale = new Vector2(0.5f, 0.5f);
-                    boss_health.SetActive(true);
-                    scoreboss = score_muncul_boss + 1;
-                }
-                
-            }
-        }
-        
-
     }
 
     public float GetCurrentScore()
